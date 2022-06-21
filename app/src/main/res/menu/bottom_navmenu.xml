@@ -21,7 +21,7 @@
         android:icon="@drawable/ic_notification"/>
 
     <item
-        android:id="@+id/profile"
+        android:id="@+id/m_profile"
         android:title="profile"
         android:icon="@drawable/ic_profile"/>
 </menu>
