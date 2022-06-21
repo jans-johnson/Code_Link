@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/m_added"
+        android:title="Added"
+        android:icon="@drawable/ic_added_poject"
+        />
+    <item android:title="Chat"
+        android:id="@+id/m_chat"
+        android:icon="@drawable/ic_chat"
+        />
+    <item
+        android:id="@+id/m_swipe"
+        android:title="Swipe"
+        android:icon="@drawable/ic_logo"/>
+
+    <item
+        android:id="@+id/m_notification"
+        android:title="notification"
+        android:icon="@drawable/ic_notification"/>
+
+    <item
+        android:id="@+id/profile"
+        android:title="profile"
+        android:icon="@drawable/ic_profile"/>
+</menu>
