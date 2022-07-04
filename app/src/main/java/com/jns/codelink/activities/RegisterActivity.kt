@@ -1,15 +1,19 @@
 package com.jns.codelink.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
 import com.jns.codelink.R
 import com.jns.codelink.fragments.ProfileDetailsFragment
 import com.jns.codelink.fragments.SignupFragment
+import com.jns.codelink.models.User
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -17,6 +21,8 @@ class RegisterActivity : AppCompatActivity() {
     lateinit var btnRegister:Button
     private lateinit var auth: FirebaseAuth;
     lateinit var details: MutableMap<String, Any>
+    lateinit var details2: MutableMap<String, Any>
+    private lateinit var database: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +31,8 @@ class RegisterActivity : AppCompatActivity() {
         ivBack=findViewById(R.id.ivBack)
         btnRegister=findViewById(R.id.btnRegister)
         auth = Firebase.auth
+
+        database = FirebaseDatabase.getInstance().reference
 
         supportFragmentManager.beginTransaction()
             .replace(R.id.flRegister, SignupFragment(), "SignupFragment").commit()
@@ -60,13 +68,25 @@ class RegisterActivity : AppCompatActivity() {
                         if (task.isSuccessful) {
                             // Sign in success, update UI with the signed-in user's information
                             val user = auth.currentUser
+                            details2=frag!!.getDetails()
+                            val newUser=User(details2["name"].toString(),
+                            details["username"].toString(),
+                            details["email"].toString(),
+                            details2["description"].toString(),
+                            details2["location"].toString(),
+                            details2["links"].toString(),
+                            details2["skills"].toString())
 
+                            val userId= auth.currentUser!!.uid
+                            database.child("users").child(userId).setValue(newUser)
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w("jans", "createUserWithEmail:failure", task.exception)
                             Toast.makeText(baseContext, "Authentication failed.",
                                 Toast.LENGTH_SHORT).show()
                         }
+                        intent = Intent(this, MainActivity::class.java)
+                        startActivity(intent)
                     }
 
             }
