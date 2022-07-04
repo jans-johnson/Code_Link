@@ -40,7 +40,7 @@ public class SignupFragment : Fragment() {
         auth = Firebase.auth
 
         etRegEmail.setOnFocusChangeListener { view, b ->
-            if (!b)
+            if (!b && !etRegEmail.text.isEmpty() && etRegEmail.text.toString().contains('@'))
             {
                 auth.fetchSignInMethodsForEmail(etRegEmail.text.toString())
                     .addOnCompleteListener(OnCompleteListener<SignInMethodQueryResult?> { task ->
@@ -63,6 +63,38 @@ public class SignupFragment : Fragment() {
         details["email"]=etRegEmail.text.toString()
         details["password"]=etRegPassword.text.toString()
         return details
+    }
+
+    public fun validate():Boolean
+    {
+        var flag=0
+        if(etRegUsername.text.isEmpty())
+        {
+            etRegUsername.error="Field empty"
+            flag =1
+        }
+        else if(etRegEmail.text.isEmpty())
+        {
+            etRegEmail.error="Field empty"
+            flag =1
+        }
+        else if(etRegPassword.text.isEmpty())
+        {
+            etRegPassword.error="Field empty"
+            flag =1
+        }
+        else if(etRegPassword.text.length<6)
+        {
+            etRegPassword.error="Password Should be 6 Characters Long"
+            flag =1
+        }
+        else if(!etRegConfPassword.text.toString().equals(etRegPassword.text.toString()))
+        {
+            etRegConfPassword.error="Doesnot Match with password"
+            flag =1
+        }
+
+        return flag==0
     }
 
 

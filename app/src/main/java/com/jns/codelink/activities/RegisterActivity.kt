@@ -47,16 +47,18 @@ class RegisterActivity : AppCompatActivity() {
                 val frag: SignupFragment? =
                     supportFragmentManager.findFragmentByTag("SignupFragment") as SignupFragment?
 
-                details= frag!!.getDetails()
+                if(frag!!.validate()) {
+                    details = frag!!.getDetails()
 
-                supportFragmentManager.beginTransaction()
-                    .replace(
-                        R.id.flRegister,
-                        ProfileDetailsFragment(),
-                        "ProfileDetailsFragment"
-                    )
-                    .commit()
-                btnRegister.text = "Confirm"
+                    supportFragmentManager.beginTransaction()
+                        .replace(
+                            R.id.flRegister,
+                            ProfileDetailsFragment(),
+                            "ProfileDetailsFragment"
+                        )
+                        .commit()
+                    btnRegister.text = "Confirm"
+                }
             }
             else
             {
