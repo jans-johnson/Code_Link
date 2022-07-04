@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.SignupFragment">
+    tools:context=".fragments.ProfileDetailsFragment">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -11,58 +12,55 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textView7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sign Up" />
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="If You Already Have an Account" />
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Login Here !" />
+            android:text="Profile Details" />
 
         <EditText
-            android:id="@+id/etRegUsername"
+            android:id="@+id/etDetName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Enter Your Username"
+            android:hint="Enter Your Name"
             android:inputType="textPersonName"
             android:minHeight="48dp" />
 
         <EditText
-            android:id="@+id/etRegEmail"
+            android:id="@+id/etDetDesc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Enter Your Email"
-            android:inputType="textEmailAddress"
+            android:hint="Enter Description"
+            android:inputType="textPersonName"
             android:minHeight="48dp" />
 
         <EditText
-            android:id="@+id/etRegPassword"
+            android:id="@+id/etDetLocation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Enter Password"
-            android:inputType="textPassword"
+            android:hint="Enter Location"
+            android:inputType="textPersonName"
             android:minHeight="48dp" />
 
         <EditText
-            android:id="@+id/etRegConfPassword"
+            android:id="@+id/etDetLinks"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Confirm Password"
-            android:inputType="textPassword"
+            android:hint="Enter Relevant Links"
+            android:inputType="textPersonName"
             android:minHeight="48dp" />
 
+        <EditText
+            android:id="@+id/etDetSkills"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Enter Skills"
+            android:inputType="textPersonName"
+            android:minHeight="48dp" />
     </LinearLayout>
+
 </FrameLayout>

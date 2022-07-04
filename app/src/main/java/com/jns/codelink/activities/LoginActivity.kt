@@ -1,6 +1,7 @@
 package com.jns.codelink.activities
 
 import android.R.attr.password
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -27,8 +28,13 @@ class LoginActivity : AppCompatActivity() {
         etEmail=findViewById(R.id.etEmail)
         etPassword=findViewById(R.id.etPassword)
         btnLogin=findViewById(R.id.btnLogin)
+        tvRegister=findViewById(R.id.tvRegister)
         mAuth = FirebaseAuth.getInstance();
 
+        tvRegister.setOnClickListener {
+            intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
         btnLogin.setOnClickListener {
             val email=etEmail.text.toString()
             val pass=etPassword.text.toString()
@@ -37,8 +43,11 @@ class LoginActivity : AppCompatActivity() {
                     this
                 ) { task ->
                     if (task.isSuccessful) {
-                        Log.d("message", "signInWithEmail:success")
                         val user = mAuth.currentUser
+                        Log.d("jans",user?.email.toString())
+                        intent = Intent(this, MainActivity::class.java)
+                        startActivity(intent)
+                        finish()
                     } else {
                         Log.w("message", "signInWithEmail:failure", task.exception)
                         Toast.makeText(

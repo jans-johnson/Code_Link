@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_added_poject.xml" value="0.158" />
+        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_back.xml" value="0.2265" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_c.xml" value="0.1" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_cpp.xml" value="0.134" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_language.xml" value="0.219" />
@@ -15,11 +16,12 @@
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/activity_add_projects.xml" value="0.23641304347826086" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/activity_login.xml" value="0.27447916666666666" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/activity_main.xml" value="0.21829710144927536" />
-        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/activity_profile_details.xml" value="0.23641304347826086" />
+        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/activity_register.xml" value="0.22418478260869565" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/fragment_added_projects.xml" value="0.27447916666666666" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/fragment_chat.xml" value="0.2604166666666667" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/fragment_login.xml" value="0.2604166666666667" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/fragment_profile.xml" value="0.27447916666666666" />
+        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/fragment_profile_details.xml" value="0.264" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/fragment_signup.xml" value="0.2604166666666667" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/fragment_swipe.xml" value="0.27447916666666666" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/menu/bottom_navmenu.xml" value="0.2734375" />
