@@ -3,30 +3,29 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/gradient_background.xml" value="0.1615" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_added_poject.xml" value="0.158" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_c.xml" value="0.1" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_cpp.xml" value="0.134" />
-        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_language.xml" value="0.219" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_launcher_background.xml" value="0.134" />
-        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_notification.xml" value="0.224" />
-        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_tick.xml" value="0.224" />
-        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/rounded_button.xml" value="0.224" />
-        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/activity_add_proj.xml" value="0.264" />
-        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/activity_add_projects.xml" value="0.23641304347826086" />
-        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/activity_login.xml" value="0.27447916666666666" />
-        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/activity_main.xml" value="0.21829710144927536" />
-        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/activity_profile_details.xml" value="0.23641304347826086" />
+        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_location.xml" value="0.1615" />
+        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/activity_main.xml" value="0.17" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/fragment_added_projects.xml" value="0.27447916666666666" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/fragment_chat.xml" value="0.2604166666666667" />
-        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/fragment_login.xml" value="0.2604166666666667" />
-        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/fragment_profile.xml" value="0.27447916666666666" />
-        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/fragment_signup.xml" value="0.2604166666666667" />
+        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/fragment_notification.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/fragment_profile.xml" value="0.33" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/fragment_swipe.xml" value="0.27447916666666666" />
+        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/item_address.xml" value="0.33" />
+        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/item_desc.xml" value="0.25" />
+        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/item_descp.xml" value="0.33" />
+        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/item_image.xml" value="0.2" />
+        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/item_lang.xml" value="0.33" />
+        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/item_links.xml" value="0.25" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/menu/bottom_navmenu.xml" value="0.2734375" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
