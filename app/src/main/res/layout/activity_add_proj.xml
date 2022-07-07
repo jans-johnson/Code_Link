@@ -156,57 +156,55 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <Space
-                android:layout_width="wrap_content"
+            <RadioGroup
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:gravity="center"
+                android:orientation="horizontal">
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/bExpert"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/rounded_button"
-                android:drawablePadding="5dp"
-                android:text="Expert"
-                android:textAllCaps="false" />
+                <RadioButton
+                    android:id="@+id/RB1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/radio_selector"
+                    android:button="@android:color/transparent"
+                    android:fontFamily="@font/poppins_medium"
+                    android:padding="16dp"
+                    android:text="Difficult"
+                    android:textColor="#050505"
+                    android:textSize="14dp" />
 
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                <RadioButton
+                    android:id="@+id/RB2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/radio_selector"
+                    android:button="@android:color/transparent"
+                    android:fontFamily="@font/poppins_medium"
+                    android:padding="16dp"
+                    android:text="Intermediate"
+                    android:textColor="#050505" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/bIntermediate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/rounded_button"
-                android:drawablePadding="20dp"
-                android:text="Intermediate"
-                android:textAllCaps="false" />
+                <RadioButton
+                    android:id="@+id/RB3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/radio_selector"
+                    android:button="@android:color/transparent"
+                    android:fontFamily="@font/poppins_medium"
+                    android:padding="16dp"
+                    android:text="Beginner"
+                    android:textColor="#050505" />
 
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/bBeginner"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/rounded_button"
-                android:text="Beginner"
-                android:textAllCaps="false" />
+            </RadioGroup>
 
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
         </LinearLayout>
 
         <Space
@@ -223,9 +221,51 @@
             android:textColorHint="#020202"
             android:textSize="13sp" />
 
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/RB4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/radio_selector"
+                    android:button="@android:color/transparent"
+                    android:fontFamily="@font/poppins_medium"
+                    android:padding="16dp"
+                    android:text="Professional"
+                    android:textColor="#050505"
+                    android:textSize="14dp" />
+
+                <RadioButton
+                    android:id="@+id/RB5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/radio_selector"
+                    android:button="@android:color/transparent"
+                    android:fontFamily="@font/poppins_medium"
+                    android:padding="16dp"
+                    android:text="Explorative"
+                    android:textColor="#050505" />
+
+
+
+            </RadioGroup>
+        </LinearLayout>
+
         <Space
             android:layout_width="match_parent"
-            android:layout_height="120dp" />
+            android:layout_height="25dp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/bRegister"
@@ -238,4 +278,5 @@
             android:textAllCaps="false" />
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
