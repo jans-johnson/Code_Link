@@ -1,60 +1,102 @@
 package com.jns.codelink.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import androidx.core.widget.doAfterTextChanged
+import androidx.fragment.app.Fragment
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.SignInMethodQueryResult
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.jns.codelink.R
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [SignupFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class SignupFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+public class SignupFragment : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+
+    lateinit var etRegUsername: EditText
+    lateinit var etRegEmail: EditText
+    lateinit var etRegPassword: EditText
+    lateinit var etRegConfPassword: EditText
+    private lateinit var auth: FirebaseAuth;
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_signup, container, false)
+        val view= inflater.inflate(R.layout.fragment_signup, container, false)
+
+        etRegUsername=view.findViewById(R.id.etRegUsername)
+        etRegEmail=view.findViewById(R.id.etRegEmail)
+        etRegPassword=view.findViewById(R.id.etRegPassword)
+        etRegConfPassword=view.findViewById(R.id.etRegConfPassword)
+
+        auth = Firebase.auth
+
+        etRegEmail.setOnFocusChangeListener { view, b ->
+            if (!b && !etRegEmail.text.isEmpty() && etRegEmail.text.toString().contains('@'))
+            {
+                auth.fetchSignInMethodsForEmail(etRegEmail.text.toString())
+                    .addOnCompleteListener(OnCompleteListener<SignInMethodQueryResult?> { task ->
+                        val isNewUser = task.result.signInMethods!!.isEmpty()
+                        if (!isNewUser) {
+                            etRegEmail.error = "Email already exists"
+                        }
+                    })
+            }
+        }
+
+        return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment SignupFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            SignupFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    public fun getDetails():MutableMap<String,Any>
+    {
+
+        val details: MutableMap<String, Any> = HashMap()
+        details["username"] = etRegUsername.text.toString()
+        details["email"]=etRegEmail.text.toString()
+        details["password"]=etRegPassword.text.toString()
+        return details
     }
+
+    public fun validate():Boolean
+    {
+        var flag=0
+        if(etRegUsername.text.isEmpty())
+        {
+            etRegUsername.error="Field empty"
+            flag =1
+        }
+        else if(etRegEmail.text.isEmpty())
+        {
+            etRegEmail.error="Field empty"
+            flag =1
+        }
+        else if(etRegPassword.text.isEmpty())
+        {
+            etRegPassword.error="Field empty"
+            flag =1
+        }
+        else if(etRegPassword.text.length<6)
+        {
+            etRegPassword.error="Password Should be 6 Characters Long"
+            flag =1
+        }
+        else if(!etRegConfPassword.text.toString().equals(etRegPassword.text.toString()))
+        {
+            etRegConfPassword.error="Doesnot Match with password"
+            flag =1
+        }
+
+        return flag==0
+    }
+
+
+
 }
