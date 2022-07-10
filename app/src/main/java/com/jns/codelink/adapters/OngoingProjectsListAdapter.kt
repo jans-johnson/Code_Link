@@ -9,30 +9,33 @@ import androidx.recyclerview.widget.RecyclerView
 import com.jns.codelink.R
 import com.jns.codelink.models.Project
 
-class AddedProjectsListAdapter(val context: Context, private val orderList: ArrayList<Project>) :
-    RecyclerView.Adapter<AddedProjectsListAdapter.ViewHolderProject>() {
+class OngoingProjectsListAdapter(val context: Context, private val orderList: ArrayList<Project>) :
+    RecyclerView.Adapter<OngoingProjectsListAdapter.ViewHolderOngoingProject>() {
 
-    class ViewHolderProject(view: View) : RecyclerView.ViewHolder(view) {
+    class ViewHolderOngoingProject(view: View) : RecyclerView.ViewHolder(view) {
         val tvProjectHeading: TextView = view.findViewById(R.id.tvProjectHeading)
         val tvProjectDescription: TextView = view.findViewById(R.id.tvProjectDescription)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderProject {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderOngoingProject {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.added_projects_single_row, parent, false)
 
-        return ViewHolderProject(view)
+        return ViewHolderOngoingProject(view)
     }
 
     override fun getItemCount(): Int {
         return orderList.size
     }
 
-    override fun onBindViewHolder(holder: ViewHolderProject, position: Int) {
-
+    override fun onBindViewHolder(
+        holder: OngoingProjectsListAdapter.ViewHolderOngoingProject,
+        position: Int
+    ) {
         holder.tvProjectHeading.text = orderList[position].heading
         holder.tvProjectDescription.text = orderList[position].description
 
         //Code for on click Listener to be defined here
     }
+
 }
