@@ -30,18 +30,15 @@
             android:textColorHint="#020202"
             android:textSize="30sp" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="20sp" />
-
         <TextView
             android:id="@+id/tproj_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:fontFamily="@font/poppins_regular"
             android:paddingHorizontal="5dp"
             android:text="Project Name"
-            android:textColorHint="#020202"
+            android:textColor="#020202"
             android:textSize="13sp" />
 
         <EditText
@@ -54,19 +51,17 @@
             android:fontFamily="@font/poppins_regular"
             android:hint="Enter name of Project"
             android:inputType="textPersonName"
-            android:textColorHint="#020202"
             android:textSize="14sp" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
 
         <TextView
             android:id="@+id/tDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:paddingHorizontal="5dp"
             android:text="Description"
+            android:textColor="#020202"
             android:textSize="13sp" />
 
         <EditText
@@ -79,21 +74,18 @@
             android:fontFamily="@font/poppins_regular"
             android:hint="Enter brief description about Project"
             android:inputType="textPersonName"
-            android:textColorHint="#020202"
             android:textSize="14sp" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
 
         <TextView
             android:id="@+id/tLanguage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:fontFamily="@font/poppins_regular"
             android:paddingHorizontal="5dp"
             android:text="Languages"
-            android:textColorHint="#020202"
+            android:textColor="#020202"
             android:textSize="13sp" />
 
         <EditText
@@ -106,22 +98,18 @@
             android:fontFamily="@font/poppins_regular"
             android:hint="Enter Language"
             android:inputType="textPersonName"
-            android:text="Enter Language"
-            android:textColorHint="#020202"
             android:textSize="14sp" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
 
         <TextView
             android:id="@+id/tField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:fontFamily="@font/poppins_regular"
             android:paddingHorizontal="5dp"
             android:text="Field"
-            android:textColorHint="#020202"
+            android:textColor="#020202"
             android:textSize="13sp" />
 
         <EditText
@@ -133,27 +121,20 @@
             android:ems="10"
             android:fontFamily="@font/poppins_regular"
             android:inputType="textPersonName"
-            android:text="Enter field"
-            android:textColorHint="#020202"
+            android:hint="Enter field"
             android:textSize="14sp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
 
         <TextView
             android:id="@+id/tDifficulty"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:fontFamily="@font/poppins_regular"
             android:paddingHorizontal="5dp"
             android:text="Difficulty"
-            android:textColorHint="#020202"
+            android:textColor="#020202"
             android:textSize="13sp" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -167,7 +148,7 @@
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/RB1"
+                    android:id="@+id/rbAdvanced"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -175,12 +156,12 @@
                     android:button="@android:color/transparent"
                     android:fontFamily="@font/poppins_medium"
                     android:padding="16dp"
-                    android:text="Difficult"
+                    android:text="Advanced"
                     android:textColor="#050505"
                     android:textSize="14dp" />
 
                 <RadioButton
-                    android:id="@+id/RB2"
+                    android:id="@+id/rbIntermediate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -192,7 +173,7 @@
                     android:textColor="#050505" />
 
                 <RadioButton
-                    android:id="@+id/RB3"
+                    android:id="@+id/rbBeginner"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -208,18 +189,15 @@
 
         </LinearLayout>
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
-
         <TextView
             android:id="@+id/tType"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:fontFamily="@font/poppins_regular"
             android:paddingHorizontal="5dp"
             android:text="Type"
-            android:textColorHint="#020202"
+            android:textColor="#020202"
             android:textSize="13sp" />
 
 
@@ -235,7 +213,7 @@
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/RB4"
+                    android:id="@+id/rbProfessional"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -248,7 +226,7 @@
                     android:textSize="14dp" />
 
                 <RadioButton
-                    android:id="@+id/RB5"
+                    android:id="@+id/rbExplorative"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -264,15 +242,13 @@
             </RadioGroup>
         </LinearLayout>
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="25dp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/bRegister"
             android:layout_width="336dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:background="@drawable/rounded_button"
             android:fontFamily="@font/poppins_medium"
             android:text="Register"
