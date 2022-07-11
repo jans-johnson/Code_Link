@@ -17,8 +17,10 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
         <TextView
             android:id="@+id/AddProj_Heading"
@@ -120,8 +122,8 @@
             android:drawablePadding="5dp"
             android:ems="10"
             android:fontFamily="@font/poppins_regular"
-            android:inputType="textPersonName"
             android:hint="Enter field"
+            android:inputType="textPersonName"
             android:textSize="14sp" />
 
         <TextView
@@ -236,7 +238,6 @@
                     android:padding="16dp"
                     android:text="Explorative"
                     android:textColor="#050505" />
-
 
 
             </RadioGroup>

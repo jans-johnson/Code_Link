@@ -14,7 +14,7 @@ class OngoingProjectsListAdapter(val context: Context, private val orderList: Ar
 
     class ViewHolderOngoingProject(view: View) : RecyclerView.ViewHolder(view) {
         val tvProjectHeading: TextView = view.findViewById(R.id.tvProjectHeading)
-        val tvProjectDescription: TextView = view.findViewById(R.id.tvProjectDescription)
+        val tvProjectDescription: TextView = view.findViewById(R.id.tvNotifDescription)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderOngoingProject {
