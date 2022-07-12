@@ -146,6 +146,7 @@
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -154,37 +155,45 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
+                    android:layout_weight="1"
                     android:background="@drawable/radio_selector"
                     android:button="@android:color/transparent"
                     android:fontFamily="@font/poppins_medium"
-                    android:padding="16dp"
+                    android:gravity="center"
+                    android:padding="10dp"
                     android:text="Advanced"
                     android:textColor="#050505"
-                    android:textSize="14dp" />
+                    android:textSize="12sp" />
 
                 <RadioButton
                     android:id="@+id/rbIntermediate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
+                    android:layout_weight="1"
                     android:background="@drawable/radio_selector"
                     android:button="@android:color/transparent"
                     android:fontFamily="@font/poppins_medium"
-                    android:padding="16dp"
+                    android:gravity="center"
+                    android:padding="10dp"
                     android:text="Intermediate"
-                    android:textColor="#050505" />
+                    android:textColor="#050505"
+                    android:textSize="12sp" />
 
                 <RadioButton
                     android:id="@+id/rbBeginner"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
+                    android:layout_weight="1"
                     android:background="@drawable/radio_selector"
                     android:button="@android:color/transparent"
                     android:fontFamily="@font/poppins_medium"
-                    android:padding="16dp"
+                    android:gravity="center"
+                    android:padding="10dp"
                     android:text="Beginner"
-                    android:textColor="#050505" />
+                    android:textColor="#050505"
+                    android:textSize="12sp" />
 
 
             </RadioGroup>
@@ -222,10 +231,11 @@
                     android:background="@drawable/radio_selector"
                     android:button="@android:color/transparent"
                     android:fontFamily="@font/poppins_medium"
-                    android:padding="16dp"
+                    android:gravity="center"
+                    android:padding="10dp"
                     android:text="Professional"
                     android:textColor="#050505"
-                    android:textSize="14dp" />
+                    android:textSize="12sp" />
 
                 <RadioButton
                     android:id="@+id/rbExplorative"
@@ -235,9 +245,11 @@
                     android:background="@drawable/radio_selector"
                     android:button="@android:color/transparent"
                     android:fontFamily="@font/poppins_medium"
-                    android:padding="16dp"
+                    android:gravity="center"
+                    android:padding="10dp"
                     android:text="Explorative"
-                    android:textColor="#050505" />
+                    android:textColor="#050505"
+                    android:textSize="12sp" />
 
 
             </RadioGroup>
