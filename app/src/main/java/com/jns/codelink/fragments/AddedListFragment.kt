@@ -29,6 +29,7 @@ class AddedListFragment : Fragment() {
 
         rvAddedList=view.findViewById(R.id.rvAddedList)
 
+        addedProjectsList.clear()
         addedProjectsList.add(Project(1,"Website","web development","python django","Simple web application"))
         addedProjectsList.add(Project(2,"Mobile Application","App development","Android Studio, Kotlin","Simple mobile application"))
         addedProjectsList.add(Project(3,"Shopping Website","web development","HTML, CSS, Javascript","Simple Shopping Applicaiton where you can add items to the cart, carry out payment and checkout"))

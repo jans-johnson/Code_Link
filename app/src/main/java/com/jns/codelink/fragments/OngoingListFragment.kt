@@ -30,6 +30,7 @@ class OngoingListFragment : Fragment() {
 
         rvAddedList=view.findViewById(R.id.rvAddedList)
 
+        ongoingProjectsList.clear()
         ongoingProjectsList.add(Project(1,"Website","web development","python django","Simple web application"))
         ongoingProjectsList.add(Project(2,"Mobile Application","App development","Android Studio, Kotlin","Simple mobile application"))
         ongoingProjectsList.add(Project(3,"Shopping Website","web development","HTML, CSS, Javascript","Simple Shopping Applicaiton where you can add items to the cart, carry out payment and checkout"))
