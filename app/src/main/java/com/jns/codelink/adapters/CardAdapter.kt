@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
 import com.jns.codelink.R
-import com.jns.codelink.models.SwipeCard
+import com.jns.codelink.models.Project
 
-class CardAdapter (context1: Context?,val resourceId: Int,val items:ArrayList<SwipeCard>) :
-    ArrayAdapter<SwipeCard>(context1!!,resourceId,items) {
+class CardAdapter (context1: Context?,val resourceId: Int,val items:ArrayList<Project>) :
+    ArrayAdapter<Project>(context1!!,resourceId,items) {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View
     {
