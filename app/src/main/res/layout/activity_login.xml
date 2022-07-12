@@ -9,10 +9,10 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="60dp"
         app:srcCompat="@drawable/ic_logo" />
 
     <TextView
@@ -20,10 +20,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:fontFamily="@font/poppins_medium"
         android:gravity="start"
-        android:text="Sign In"
+        android:text="Login"
         android:textColor="#000000"
         android:textSize="30sp"
         android:textStyle="bold" />

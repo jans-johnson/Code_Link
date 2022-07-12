@@ -1,60 +1,65 @@
 package com.jns.codelink.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import androidx.fragment.app.Fragment
 import com.jns.codelink.R
+import com.jns.codelink.adapters.CardAdapter
+import com.jns.codelink.models.Project
+import com.lorentzos.flingswipe.SwipeFlingAdapterView
+import com.lorentzos.flingswipe.SwipeFlingAdapterView.onFlingListener
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [swipeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class SwipeFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    lateinit var ivSwipeRight:ImageView
+    lateinit var ivSwipeLeft:ImageView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_swipe, container, false)
+        val view= inflater.inflate(R.layout.fragment_swipe, container, false)
+
+        //temporary list used to display output, will be replaced later
+        val list=ArrayList<Project>()
+        list.add(Project(1,"Website","web development","python django","Simple web application"))
+        list.add(Project(2,"Mobile Application","App development","Android Studio, Kotlin","Simple mobile application"))
+        list.add(Project(3,"Shopping Website","web development","HTML, CSS, Javascript","Simple Shopping Applicaiton where you can add items to the cart, carry out payment and checkout"))
+
+        val swipeFlingAdapterView=view.findViewById<SwipeFlingAdapterView>(R.id.cvAdapter)
+        ivSwipeRight=view.findViewById(R.id.ivSwipeRight)
+        ivSwipeLeft=view.findViewById(R.id.ivSwipeLeft)
+
+
+        var arrayAdapter=
+            this.activity?.let { CardAdapter(it,R.layout.swipecard_design,list) }
+
+        swipeFlingAdapterView.adapter=arrayAdapter
+        swipeFlingAdapterView.setFlingListener(object : onFlingListener {
+            override fun removeFirstObjectInAdapter() {
+                list.removeAt(0)
+                arrayAdapter!!.notifyDataSetChanged()
+            }
+
+            override fun onLeftCardExit(o: Any) {
+
+                Log.d("jans","Left called")
+            }
+            override fun onRightCardExit(o: Any) {
+                Log.d("jans","Right called")
+            }
+            override fun onAdapterAboutToEmpty(i: Int) {}
+            override fun onScroll(v: Float) {}
+        })
+
+
+        return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment swipeFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            SwipeFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
 }

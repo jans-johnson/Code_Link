@@ -17,8 +17,10 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
         <TextView
             android:id="@+id/AddProj_Heading"
@@ -30,18 +32,15 @@
             android:textColorHint="#020202"
             android:textSize="30sp" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="20sp" />
-
         <TextView
             android:id="@+id/tproj_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:fontFamily="@font/poppins_regular"
             android:paddingHorizontal="5dp"
             android:text="Project Name"
-            android:textColorHint="#020202"
+            android:textColor="#020202"
             android:textSize="13sp" />
 
         <EditText
@@ -52,21 +51,19 @@
             android:drawablePadding="5dp"
             android:ems="10"
             android:fontFamily="@font/poppins_regular"
+            android:hint="Enter name of Project"
             android:inputType="textPersonName"
-            android:text="Enter name of Project"
-            android:textColorHint="#020202"
             android:textSize="14sp" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
 
         <TextView
             android:id="@+id/tDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:paddingHorizontal="5dp"
             android:text="Description"
+            android:textColor="#020202"
             android:textSize="13sp" />
 
         <EditText
@@ -77,23 +74,20 @@
             android:drawablePadding="5dp"
             android:ems="10"
             android:fontFamily="@font/poppins_regular"
+            android:hint="Enter brief description about Project"
             android:inputType="textPersonName"
-            android:text="Enter brief description about Project"
-            android:textColorHint="#020202"
             android:textSize="14sp" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
 
         <TextView
             android:id="@+id/tLanguage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:fontFamily="@font/poppins_regular"
             android:paddingHorizontal="5dp"
             android:text="Languages"
-            android:textColorHint="#020202"
+            android:textColor="#020202"
             android:textSize="13sp" />
 
         <EditText
@@ -104,23 +98,20 @@
             android:drawablePadding="5dp"
             android:ems="10"
             android:fontFamily="@font/poppins_regular"
+            android:hint="Enter Language"
             android:inputType="textPersonName"
-            android:text="Enter Language"
-            android:textColorHint="#020202"
             android:textSize="14sp" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
 
         <TextView
             android:id="@+id/tField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:fontFamily="@font/poppins_regular"
             android:paddingHorizontal="5dp"
             android:text="Field"
-            android:textColorHint="#020202"
+            android:textColor="#020202"
             android:textSize="13sp" />
 
         <EditText
@@ -131,111 +122,161 @@
             android:drawablePadding="5dp"
             android:ems="10"
             android:fontFamily="@font/poppins_regular"
+            android:hint="Enter field"
             android:inputType="textPersonName"
-            android:text="Enter field"
-            android:textColorHint="#020202"
             android:textSize="14sp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
 
         <TextView
             android:id="@+id/tDifficulty"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:fontFamily="@font/poppins_regular"
             android:paddingHorizontal="5dp"
             android:text="Difficulty"
-            android:textColorHint="#020202"
+            android:textColor="#020202"
             android:textSize="13sp" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/bExpert"
-                android:layout_width="wrap_content"
+            <RadioGroup
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/rounded_button"
-                android:drawablePadding="5dp"
-                android:text="Expert"
-                android:textAllCaps="false" />
+                android:gravity="center"
+                android:orientation="horizontal">
 
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                <RadioButton
+                    android:id="@+id/rbAdvanced"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio_selector"
+                    android:button="@android:color/transparent"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="Advanced"
+                    android:textColor="#050505"
+                    android:textSize="12sp" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/bIntermediate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/rounded_button"
-                android:drawablePadding="20dp"
-                android:text="Intermediate"
-                android:textAllCaps="false" />
+                <RadioButton
+                    android:id="@+id/rbIntermediate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio_selector"
+                    android:button="@android:color/transparent"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="Intermediate"
+                    android:textColor="#050505"
+                    android:textSize="12sp" />
 
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                <RadioButton
+                    android:id="@+id/rbBeginner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/radio_selector"
+                    android:button="@android:color/transparent"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="Beginner"
+                    android:textColor="#050505"
+                    android:textSize="12sp" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/bBeginner"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/rounded_button"
-                android:text="Beginner"
-                android:textAllCaps="false" />
 
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+            </RadioGroup>
+
         </LinearLayout>
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
 
         <TextView
             android:id="@+id/tType"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:fontFamily="@font/poppins_regular"
             android:paddingHorizontal="5dp"
             android:text="Type"
-            android:textColorHint="#020202"
+            android:textColor="#020202"
             android:textSize="13sp" />
 
-        <Space
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="120dp" />
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbProfessional"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/radio_selector"
+                    android:button="@android:color/transparent"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="Professional"
+                    android:textColor="#050505"
+                    android:textSize="12sp" />
+
+                <RadioButton
+                    android:id="@+id/rbExplorative"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/radio_selector"
+                    android:button="@android:color/transparent"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="Explorative"
+                    android:textColor="#050505"
+                    android:textSize="12sp" />
+
+
+            </RadioGroup>
+        </LinearLayout>
+
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/bRegister"
             android:layout_width="336dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:background="@drawable/rounded_button"
             android:fontFamily="@font/poppins_medium"
             android:text="Register"
             android:textAllCaps="false" />
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
