@@ -8,7 +8,7 @@
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_back.xml" value="0.2265" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_c.xml" value="0.1" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_cpp.xml" value="0.134" />
-        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_launcher_background.xml" value="0.134" />ntry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/fragment_profile.xml" value="0.33" />
+        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_launcher_background.xml" value="0.134" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_notification.xml" value="0.224" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_proj_name.xml" value="0.24" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_tick.xml" value="0.224" />
@@ -20,6 +20,7 @@
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/activity_login.xml" value="0.27447916666666666" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/activity_main.xml" value="0.21829710144927536" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/activity_register.xml" value="0.22418478260869565" />
+        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/activity_splashpg.xml" value="0.1675213675213675" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/fragment_added_projects.xml" value="0.27447916666666666" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/fragment_chat.xml" value="0.2604166666666667" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/fragment_login.xml" value="0.2604166666666667" />
