@@ -8,6 +8,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.jns.codelink.R
 import com.jns.codelink.models.Project
@@ -63,6 +64,8 @@ class AddProjActivity : AppCompatActivity() {
         database = FirebaseDatabase.getInstance().reference
         auth = Firebase.auth
 
+        val db = Firebase.firestore
+
         ivAddBack.setOnClickListener {
 
             Toast.makeText(this,"Project Not Added",Toast.LENGTH_SHORT).show()
@@ -98,10 +101,12 @@ class AddProjActivity : AppCompatActivity() {
 
                     var totalProjects=it.value.toString().toInt()
                     totalProjects++
+
                     val project=Project(totalProjects,etAddProjectName.text.toString(),etAddDescription.text.toString(),etAddLanguage.text.toString()
                     ,etAddField.text.toString(),difficulty,type,userId)
 
-                    database.child("projects").child(totalProjects.toString()).setValue(project).addOnCompleteListener {
+
+                    db.collection("projects").document(totalProjects.toString()).set(project).addOnCompleteListener {
                         database.child("totalProjects").setValue(totalProjects.toString()).addOnCompleteListener {
                             Toast.makeText(this,"Project Added Successfully",Toast.LENGTH_SHORT).show()
                             finish()
