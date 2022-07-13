@@ -16,7 +16,7 @@ import com.jns.codelink.models.Project
 
 class OngoingListFragment : Fragment() {
 
-    lateinit var rvAddedList:RecyclerView
+    lateinit var rvOngoingList:RecyclerView
     var ongoingProjectsList = arrayListOf<Project>()
     lateinit var layoutManager: RecyclerView.LayoutManager
 
@@ -25,19 +25,19 @@ class OngoingListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view= inflater.inflate(R.layout.fragment_added_list, container, false)
+        val view= inflater.inflate(R.layout.fragment_ongoing_list, container, false)
         layoutManager = LinearLayoutManager(activity)
 
-        rvAddedList=view.findViewById(R.id.rvAddedList)
+        rvOngoingList=view.findViewById(R.id.rvOngoingList)
 
         ongoingProjectsList.clear()
-        ongoingProjectsList.add(Project(1,"Website","web development","python django","Simple web application"))
-        ongoingProjectsList.add(Project(2,"Mobile Application","App development","Android Studio, Kotlin","Simple mobile application"))
-        ongoingProjectsList.add(Project(3,"Shopping Website","web development","HTML, CSS, Javascript","Simple Shopping Applicaiton where you can add items to the cart, carry out payment and checkout"))
+        ongoingProjectsList.add(Project(1,"Website","Simple web application","Python","Web Development","advanced","professional"))
+        ongoingProjectsList.add(Project(2,"Application","Simple Android application","Kotlin","Android Development","advanced","professional"))
+        ongoingProjectsList.add(Project(3,"Android Development","Simple web application","Python","Web Development","advanced","professional"))
 
         val projectAdapter = OngoingProjectsListAdapter(activity as Context, ongoingProjectsList)
-        rvAddedList.adapter = projectAdapter
-        rvAddedList.layoutManager = layoutManager
+        rvOngoingList.adapter = projectAdapter
+        rvOngoingList.layoutManager = layoutManager
         return view
     }
 

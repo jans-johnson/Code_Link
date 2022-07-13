@@ -30,9 +30,9 @@ class AddedListFragment : Fragment() {
         rvAddedList=view.findViewById(R.id.rvAddedList)
 
         addedProjectsList.clear()
-        addedProjectsList.add(Project(1,"Website","web development","python django","Simple web application"))
-        addedProjectsList.add(Project(2,"Mobile Application","App development","Android Studio, Kotlin","Simple mobile application"))
-        addedProjectsList.add(Project(3,"Shopping Website","web development","HTML, CSS, Javascript","Simple Shopping Applicaiton where you can add items to the cart, carry out payment and checkout"))
+        addedProjectsList.add(Project(1,"Website","Simple web application","Python","Web Development","advanced","professional"))
+        addedProjectsList.add(Project(2,"Application","Simple Android application","Kotlin","Android Development","advanced","professional"))
+        addedProjectsList.add(Project(3,"Android Development","Simple web application","Python","Web Development","advanced","professional"))
 
         val projectAdapter = AddedProjectsListAdapter(activity as Context, addedProjectsList)
         rvAddedList.adapter = projectAdapter

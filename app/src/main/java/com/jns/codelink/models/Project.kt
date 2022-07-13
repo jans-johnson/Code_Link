@@ -2,6 +2,8 @@ package com.jns.codelink.models
 
 data class Project (var id:Int,
                     var heading:String,
-                    var type:String,
+                    var description:String,
                     var language:String,
-                    var description:String)
+                    var field:String,
+                    var difficulty:String,
+                    var type:String)
