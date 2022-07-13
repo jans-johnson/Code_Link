@@ -3,6 +3,7 @@ package com.jns.codelink.activities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -35,6 +36,8 @@ class AddProjActivity : AppCompatActivity() {
 
     lateinit var ivAddBack:ImageView
 
+    lateinit var addProjProgressLayout:RelativeLayout
+
 
     private lateinit var auth: FirebaseAuth;
 
@@ -60,6 +63,8 @@ class AddProjActivity : AppCompatActivity() {
         btnAdd=findViewById(R.id.btnAdd)
 
         ivAddBack=findViewById(R.id.ivAddBack)
+
+        addProjProgressLayout=findViewById(R.id.addProjProgressLayout)
 
         database = FirebaseDatabase.getInstance().reference
         auth = Firebase.auth
@@ -95,6 +100,7 @@ class AddProjActivity : AppCompatActivity() {
                 else
                     type="Explorative"
 
+                addProjProgressLayout.visibility=View.VISIBLE
                 database.child("totalProjects").get().addOnSuccessListener {
 
                     val userId= auth.currentUser!!.uid
@@ -108,6 +114,7 @@ class AddProjActivity : AppCompatActivity() {
 
                     db.collection("projects").document(totalProjects.toString()).set(project).addOnCompleteListener {
                         database.child("totalProjects").setValue(totalProjects.toString()).addOnCompleteListener {
+                            addProjProgressLayout.visibility=View.GONE
                             Toast.makeText(this,"Project Added Successfully",Toast.LENGTH_SHORT).show()
                             finish()
                         }

@@ -47,6 +47,7 @@ dependencies {
     implementation 'androidx.annotation:annotation:1.4.0'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+    implementation 'com.airbnb.android:lottie:3.4.0'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.google.firebase:firebase-firestore-ktx:24.2.0'
     testImplementation 'junit:junit:4.13.2'
