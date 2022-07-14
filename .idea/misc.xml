@@ -29,6 +29,7 @@
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/added_projects_single_row.xml" value="0.2558876811594203" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/chat_single_row.xml" value="0.21784420289855072" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/details.xml" value="0.1" />
+        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/dialog_get_link.xml" value="0.27309782608695654" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/fragment_added_list.xml" value="0.2558876811594203" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/fragment_added_projects.xml" value="0.2" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/fragment_allchat.xml" value="0.17349726775956284" />
@@ -48,6 +49,8 @@
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/item_koloda.xml" value="0.24909420289855072" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/item_lang.xml" value="0.33" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/item_links.xml" value="0.25" />
+        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/link_single_item.xml" value="0.3193430656934307" />
+        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/links_single_row.xml" value="0.205859375" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/notification_single_row.xml" value="0.23007246376811594" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/swipecard_design.xml" value="0.2713541666666667" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/menu/bottom_navmenu.xml" value="0.2734375" />
