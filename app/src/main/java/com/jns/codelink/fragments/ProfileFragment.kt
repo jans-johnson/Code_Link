@@ -24,11 +24,12 @@ class ProfileFragment : Fragment() {
 
 
     private lateinit var database: DatabaseReference
-    private lateinit var auth: FirebaseAuth;
+    private lateinit var auth: FirebaseAuth
     lateinit var tvProfileName:TextView
     lateinit var tvProfileDescription:TextView
     lateinit var tvProfileEmail:TextView
     lateinit var tvProfileSkills:TextView
+    lateinit var tvProfileAddress:TextView
     lateinit var profileProgressLayout:RelativeLayout
     lateinit var lvProfileLinks:ListView
     lateinit var list:ArrayList<String>
@@ -44,6 +45,7 @@ class ProfileFragment : Fragment() {
         tvProfileDescription=view.findViewById(R.id.tvProfileDescription)
         tvProfileEmail=view.findViewById(R.id.tvProfileEmail)
         tvProfileSkills=view.findViewById(R.id.tvProfileSkills)
+        tvProfileAddress=view.findViewById(R.id.tvProfileAddress)
         profileProgressLayout=view.findViewById(R.id.profileProgressLayout)
         lvProfileLinks=view.findViewById(R.id.lvProfileLinks)
 
@@ -60,6 +62,8 @@ class ProfileFragment : Fragment() {
             tvProfileDescription.text=details.description
             tvProfileEmail.text=details.email
             tvProfileSkills.text=details.skills
+            tvProfileAddress.text=details.location
+
 
             val str=details.links.drop(1).dropLast(1)
             list=ArrayList(str.split(","))
