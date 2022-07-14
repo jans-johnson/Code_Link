@@ -28,9 +28,9 @@ class SwipeFragment : Fragment() {
 
         //temporary list used to display output, will be replaced later
         val list=ArrayList<Project>()
-        list.add(Project(1,"Website","web development","python django","Simple web application"))
-        list.add(Project(2,"Mobile Application","App development","Android Studio, Kotlin","Simple mobile application"))
-        list.add(Project(3,"Shopping Website","web development","HTML, CSS, Javascript","Simple Shopping Applicaiton where you can add items to the cart, carry out payment and checkout"))
+        list.add(Project(1,"Website","Simple web application","Python","Web Development","advanced","professional"))
+        list.add(Project(2,"Application","Simple Android application","Kotlin","Android Development","advanced","professional"))
+        list.add(Project(3,"Android Development","Simple web application","Python","Web Development","advanced","professional"))
 
         val swipeFlingAdapterView=view.findViewById<SwipeFlingAdapterView>(R.id.cvAdapter)
         ivSwipeRight=view.findViewById(R.id.ivSwipeRight)

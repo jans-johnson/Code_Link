@@ -30,6 +30,7 @@ class NotificationFragment : Fragment() {
 
         rvNotification=view.findViewById(R.id.rvNotification)
 
+        notificationList.clear()
         notificationList.add(Notification("Jisha","swiped right","10:30","python django"))
         notificationList.add(Notification("Jisha","swiped right","10:30","python django"))
         notificationList.add(Notification("Jisha","swiped right","10:30","python django"))

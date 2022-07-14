@@ -3,6 +3,7 @@ package com.jns.codelink.activities
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -19,6 +20,7 @@ class RegisterActivity : AppCompatActivity() {
 
     lateinit var ivBack:ImageView
     lateinit var btnRegister:Button
+    lateinit var registerProgressLayout:RelativeLayout
     private lateinit var auth: FirebaseAuth;
     lateinit var details: MutableMap<String, Any>
     lateinit var details2: MutableMap<String, Any>
@@ -30,6 +32,7 @@ class RegisterActivity : AppCompatActivity() {
 
         ivBack=findViewById(R.id.ivBack)
         btnRegister=findViewById(R.id.btnRegister)
+        registerProgressLayout=findViewById(R.id.registerProgressLayout)
         auth = Firebase.auth
 
         database = FirebaseDatabase.getInstance().reference
@@ -62,6 +65,7 @@ class RegisterActivity : AppCompatActivity() {
             }
             else
             {
+                registerProgressLayout.visibility= View.VISIBLE
                 val frag: ProfileDetailsFragment? =
                     supportFragmentManager.findFragmentByTag("ProfileDetailsFragment") as ProfileDetailsFragment?
 
@@ -81,6 +85,7 @@ class RegisterActivity : AppCompatActivity() {
 
                             val userId= auth.currentUser!!.uid
                             database.child("users").child(userId).setValue(newUser)
+                            registerProgressLayout.visibility=View.GONE
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w("jans", "createUserWithEmail:failure", task.exception)

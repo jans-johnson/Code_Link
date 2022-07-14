@@ -6,6 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".activities.AddProjActivity">
 
+    <RelativeLayout
+        android:id="@+id/addProjProgressLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#95FFFFFF"
+        android:elevation="1dp"
+        android:visibility="gone">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerInParent="true"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loading" />
+
+    </RelativeLayout>
+
     <LinearLayout
         android:id="@+id/MainLinearLayout"
         android:layout_width="0dp"
@@ -44,7 +62,7 @@
             android:textSize="13sp" />
 
         <EditText
-            android:id="@+id/ePersonName"
+            android:id="@+id/etAddProjectName"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:drawableStart="@drawable/ic_proj_name"
@@ -67,7 +85,7 @@
             android:textSize="13sp" />
 
         <EditText
-            android:id="@+id/edescription"
+            android:id="@+id/etAddDescription"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:drawableStart="@drawable/ic_description"
@@ -91,7 +109,7 @@
             android:textSize="13sp" />
 
         <EditText
-            android:id="@+id/eLanguage"
+            android:id="@+id/etAddLanguage"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:drawableStart="@drawable/ic_language"
@@ -115,7 +133,7 @@
             android:textSize="13sp" />
 
         <EditText
-            android:id="@+id/eField"
+            android:id="@+id/etAddField"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:drawableStart="@drawable/ic_type_of_application"
@@ -144,6 +162,7 @@
             android:orientation="horizontal">
 
             <RadioGroup
+                android:id="@+id/rgAddDifficulty"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -218,6 +237,7 @@
             android:orientation="horizontal">
 
             <RadioGroup
+                android:id="@+id/rgAddType"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -257,20 +277,20 @@
 
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/bRegister"
+            android:id="@+id/btnAdd"
             android:layout_width="336dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:background="@drawable/rounded_button"
             android:fontFamily="@font/poppins_medium"
-            android:text="Register"
+            android:text="Add"
             android:textAllCaps="false" />
 
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/ivAddBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
