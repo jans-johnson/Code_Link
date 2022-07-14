@@ -30,7 +30,6 @@ class GroupChatFragment : Fragment() {
 
         rvGroupChatList=view.findViewById(R.id.rvGroupChatList)
 
-        Log.d("jans","called")
         groupChatList.add(Chat("Maris","Hello!","4:13","5"))
         groupChatList.add(Chat("Maris","Hello!","4:13","5"))
         groupChatList.add(Chat("Maris","Hello!","4:13","5"))
