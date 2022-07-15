@@ -1,21 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.ProfileFragment">
 
+    <RelativeLayout
+        android:id="@+id/profileProgressLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#95FFFFFF"
+        android:elevation="2dp"
+        android:visibility="invisible">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerInParent="true"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loading" />
+
+    </RelativeLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:nestedScrollingEnabled="false"
         android:orientation="vertical">
 
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:paddingTop="10dp">
 
@@ -38,18 +57,12 @@
                 android:layout_marginTop="15dp"
                 android:fontFamily="@font/poppins_medium"
                 android:gravity="center"
-                android:text="Maris Reji"
                 android:textColor="@color/black"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
 
         </RelativeLayout>
-
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -77,13 +90,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"
-                            android:drawableStart="@drawable/ic_desc"
                             android:fontFamily="@font/poppins_regular"
                             android:gravity="center"
-                            android:text="Student at Rajagiri School of Engineering and Technology"
                             android:textColor="@color/black"
                             android:textSize="14sp"
-                            android:textStyle="bold|normal" />
+                            android:textStyle="bold|normal"
+                            app:drawableStartCompat="@drawable/ic_desc" />
 
                         <TextView
                             android:id="@+id/tvProfileEmail"
@@ -92,7 +104,6 @@
                             android:layout_gravity="center"
                             android:fontFamily="@font/poppins_regular"
                             android:gravity="center"
-                            android:text="abcdefg@gmail.com"
                             android:textColor="#374143"
                             android:textSize="14sp" />
 
@@ -123,13 +134,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="5dp"
-                            android:drawableStart="@drawable/ic_location"
                             android:drawablePadding="10dp"
                             android:fontFamily="@font/poppins_regular"
-                            android:text="Kochi, Kerala"
                             android:textColor="@color/black"
                             android:textSize="16sp"
-                            android:textStyle="normal" />
+                            android:textStyle="normal"
+                            app:drawableStartCompat="@drawable/ic_location" />
 
                     </LinearLayout>
 
@@ -145,24 +155,13 @@
                     tools:cardCornerRAdius="5dp"
                     tools:context=".fragments.ProfileFragment">
 
-                    <LinearLayout
+                    <ListView
+                        android:id="@+id/lvProfileLinks"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:layout_margin="10dp"
+                        android:divider="@android:color/transparent" />
 
-                        <TextView
-                            android:id="@+id/tvProfileLinks"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:fontFamily="@font/poppins_regular"
-                            android:padding="10dp"
-                            android:text="https://in.linkedin.com/in/maris-reji"
-                            android:textColor="#00c6ff"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
 
@@ -182,7 +181,6 @@
                         android:layout_margin="8dp"
                         android:fontFamily="@font/poppins_regular"
                         android:padding="10dp"
-                        android:text="Java,HTML,CSS"
                         android:textColor="@color/black"
                         android:textSize="14sp"
                         android:textStyle="normal" />
@@ -190,7 +188,6 @@
                 </androidx.cardview.widget.CardView>
 
             </LinearLayout>
-        </ScrollView>
     </LinearLayout>
 
-</FrameLayout>
+</RelativeLayout>

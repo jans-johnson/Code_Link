@@ -6,6 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".activities.AddProjActivity">
 
+    <RelativeLayout
+        android:id="@+id/addProjProgressLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#95FFFFFF"
+        android:elevation="1dp"
+        android:visibility="gone">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerInParent="true"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/loading" />
+
+    </RelativeLayout>
+
     <LinearLayout
         android:id="@+id/MainLinearLayout"
         android:layout_width="0dp"
