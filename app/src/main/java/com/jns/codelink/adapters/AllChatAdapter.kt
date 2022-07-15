@@ -29,7 +29,7 @@ class AllChatAdapter(val context: Context, val orderList: ArrayList<Chat>):
     override fun onBindViewHolder(holder: ViewHolderProject, position: Int) {
 
         val currentUser = orderList[position]
-        holder.tvChatPerson.text = currentUser.person
+        holder.tvChatPerson.text = currentUser.name
         holder.tvChatDescription.text = currentUser.description
         holder.tvChatNotif.text = currentUser.notif_num
         holder.tvChatTime.text = currentUser.time
@@ -37,7 +37,7 @@ class AllChatAdapter(val context: Context, val orderList: ArrayList<Chat>):
         //Code for on click Listener to be defined here
         holder.itemView.setOnClickListener {
             val intent = Intent(context,ChatActivity::class.java)
-            intent.putExtra("name",currentUser.person)
+            intent.putExtra("name",currentUser.name)
             intent.putExtra("uid",currentUser.uid)
             context.startActivity(intent)
 

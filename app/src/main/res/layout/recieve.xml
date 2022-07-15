@@ -6,9 +6,8 @@
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:background="@drawable/rounded_button"
-        android:layout_alignParentRight="true"
-        android:layout_marginLeft="5dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:layout_height="wrap_content">
 
@@ -16,9 +15,8 @@
             android:id="@+id/txt_receive_message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="This is recieve message"
-            android:textColor="@color/white"
             android:padding="18dp"
+            android:text="This is recieve message"
             android:textSize="18sp">
 
         </TextView>
