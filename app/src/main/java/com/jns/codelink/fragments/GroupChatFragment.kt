@@ -31,9 +31,9 @@ class GroupChatFragment : Fragment() {
         rvGroupChatList=view.findViewById(R.id.rvGroupChatList)
 
         Log.d("jans","called")
-        groupChatList.add(Chat("Maris","Hello!","4:13","5"))
-        groupChatList.add(Chat("Maris","Hello!","4:13","5"))
-        groupChatList.add(Chat("Maris","Hello!","4:13","5"))
+        groupChatList.add(Chat("Maris","Hello!","4:13","5","1QYxE3yfqaULZEmY8EC41H7V4913"))
+        groupChatList.add(Chat("Maris","Hello!","4:13","5", "1QYxE3yfqaULZEmY8EC41H7V4913"))
+        groupChatList.add(Chat("Maris","Hello!","4:13","5", "1QYxE3yfqaULZEmY8EC41H7V4913"))
 
         val projectAdapter = GroupChatAdapter(activity as Context, groupChatList)
         rvGroupChatList.adapter = projectAdapter
