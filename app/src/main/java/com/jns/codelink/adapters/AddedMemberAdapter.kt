@@ -18,7 +18,7 @@ class AddedMemberAdapter(private val orderList: ArrayList<Chat>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.added_member_single_row, parent, false)
+            .inflate(R.layout.add_member_single_row, parent, false)
 
         return ViewHolder(view)
     }
