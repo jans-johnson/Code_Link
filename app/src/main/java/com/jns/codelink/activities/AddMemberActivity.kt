@@ -23,6 +23,8 @@ class AddMemberActivity:AppCompatActivity(){
     var potmembersList = arrayListOf<Chat>()
     var addedmembersList = arrayListOf<Chat>()
     lateinit var layoutManager: RecyclerView.LayoutManager
+    lateinit var layoutManager2: RecyclerView.LayoutManager
+
     var projectAdapter:RecyclerView.Adapter<AddMemberAdapter.ViewHolder>?=null
     var projectAdapter2:RecyclerView.Adapter<AddedMemberAdapter.ViewHolder>?=null
 
@@ -30,6 +32,7 @@ class AddMemberActivity:AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_member)
         layoutManager = LinearLayoutManager(this) //should i pass anything else
+        layoutManager2 = LinearLayoutManager(this)
 
         //ask abt needing view?
         rvPotMember=findViewById(R.id.rvPotMembers)
@@ -49,6 +52,6 @@ class AddMemberActivity:AppCompatActivity(){
         //can we do this?
         projectAdapter2 = AddedMemberAdapter(addedmembersList)
         rvAddedMember.adapter = projectAdapter2
-        rvAddedMember.layoutManager = layoutManager
+        rvAddedMember.layoutManager = layoutManager2
     }
 }
