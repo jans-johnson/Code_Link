@@ -14,11 +14,12 @@ import com.jns.codelink.R
 import com.jns.codelink.adapters.*
 import com.jns.codelink.models.Chat
 import com.jns.codelink.models.Project
+import com.jns.codelink.models.User
 
 class AllChatFragment : Fragment() {
 
     private lateinit var rvAllChatList: RecyclerView
-    private lateinit var allChatsList: ArrayList<Chat> //required?
+    private lateinit var allChatsList: ArrayList<Chat>
     private lateinit var projectAdapter: AllChatAdapter
     lateinit var layoutManager: RecyclerView.LayoutManager
     private lateinit var mAuth: FirebaseAuth
@@ -44,28 +45,27 @@ class AllChatFragment : Fragment() {
         mAuth = FirebaseAuth.getInstance()
         mDbRef = FirebaseDatabase.getInstance().getReference()
 
-        //allChatsList.add(Chat("Jans","Hello!","4:13","5","1QYxE3yfqaULZEmY8EC41H7V4913"))
-        //allChatsList.add(Chat("Jans","Hello! hey my name is jishaaaaaa whats your name","4:13","5","1QYxE3yfqaULZEmY8EC41H7V4913"))
-        //allChatsList.add(Chat("Jans","Hello!","4:13","5","1kVE6eDnXQPbR14xPkxT9VfcbfV2"))
 
         val projectAdapter = AllChatAdapter(activity as Context, allChatsList)
         rvAllChatList.adapter = projectAdapter
         rvAllChatList.layoutManager = layoutManager
 
-        //this is to display all users logged in. Has to be changed and made to those swiped right
-        mDbRef.child("users").addValueEventListener(object: ValueEventListener{
+        mDbRef.child("chats").addValueEventListener(object: ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
 
                 allChatsList.clear()
-                for(postSnapshot in snapshot.children){
-                    val currentUser = postSnapshot.getValue(Chat::class.java) //might cause error
 
-                    if(mAuth.currentUser?.uid != currentUser?.uid) {
-                        allChatsList.add(currentUser!!)
-                        Log.d("jans",currentUser.uid)
+                for(postSnapshot in snapshot.children){
+                    if (postSnapshot.key.toString().startsWith(mAuth.currentUser!!.uid))
+                    {
+                        val uid=postSnapshot.key.toString().replace(mAuth.currentUser!!.uid,"")
+                        mDbRef.child("users").child(uid).get().addOnCompleteListener {
+                            val added=it.result.getValue(Chat::class.java) as Chat
+                            allChatsList.add(added)
+                            projectAdapter.notifyDataSetChanged()
+                        }
                     }
                 }
-                projectAdapter.notifyDataSetChanged()
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -73,7 +73,6 @@ class AllChatFragment : Fragment() {
             }
 
         })
-
         return view
     }
 
