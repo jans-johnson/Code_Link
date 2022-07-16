@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -25,7 +26,7 @@ class AddMemberActivity:AppCompatActivity(){
     lateinit var layoutManager: RecyclerView.LayoutManager
     lateinit var layoutManager2: RecyclerView.LayoutManager
 
-    var projectAdapter:RecyclerView.Adapter<AddMemberAdapter.ViewHolder>?=null
+    //var projectAdapter:RecyclerView.Adapter<AddMemberAdapter.ViewHolder>?=null
     var projectAdapter2:RecyclerView.Adapter<AddedMemberAdapter.ViewHolder>?=null
 
     override fun onCreate(savedInstanceState: Bundle?){
@@ -45,13 +46,22 @@ class AddMemberActivity:AppCompatActivity(){
         addedmembersList.add(Chat("Maris","Hello!","4:13","5"))
         addedmembersList.add(Chat("Megha","Hello!","4:13","5"))
 
-        projectAdapter = AddMemberAdapter(potmembersList)
+        var projectAdapter = AddMemberAdapter(potmembersList)
         rvPotMember.adapter = projectAdapter
         rvPotMember.layoutManager = layoutManager
+        projectAdapter.setOnItemClickListener(object: AddMemberAdapter.onItemClickListener{
+            override fun onItemClick(position: Int) {
+                Toast.makeText(this@AddMemberActivity,"you clicked on item $position",Toast.LENGTH_SHORT).show()
+            }
+
+        })
+
 
         //can we do this?
         projectAdapter2 = AddedMemberAdapter(addedmembersList)
         rvAddedMember.adapter = projectAdapter2
         rvAddedMember.layoutManager = layoutManager2
+
+
     }
 }
