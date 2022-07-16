@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         val addedProjectsFragment=AddedProjectsFragment()
         val chatFragment=ChatFragment()
         val notificationFragment=NotificationFragment()
-        val profileFragment=ProfileFragment()
+        val profileFragment=ProfileFragment(0,null)
         val bottomNavigationView=findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         val swipeFragment=SwipeFragment()
 

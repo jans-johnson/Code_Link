@@ -89,14 +89,14 @@ class SwipeFragment : Fragment() {
 
             override fun onLeftCardExit(o: Any) {
                 val item=o as Project
-                database.child("project_swipes").child(item.id.toString()).child("left").setValue(userId)
+                database.child("project_swipes").child(item.id.toString()).child("left").push().setValue(userId)
             }
             override fun onRightCardExit(o: Any) {
                 val item=o as Project
                 val current = LocalDateTime.now()
                 val formatter = DateTimeFormatter.ofPattern("HH:mm")
                 val formatted = current.format(formatter)
-                database.child("project_swipes").child(item.id.toString()).child("right").setValue(userId)
+                database.child("project_swipes").child(item.id.toString()).child("right").push().setValue(userId)
 
                 database.child("users").child(auth.currentUser!!.uid.toString()).get().addOnSuccessListener {
                     database.child("notifications").child(item.owner).push().setValue(
