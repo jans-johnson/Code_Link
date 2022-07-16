@@ -50,10 +50,16 @@ class SwipeFragment : Fragment() {
             it.documents.forEach {
                 val data=it.data
                 if(!data?.get("owner").toString().equals(userId))
-                list.add(Project(data?.getValue("id").toString().toInt(),data?.getValue("heading").toString(),data?.getValue("description").toString(),
-                    data?.getValue("language").toString(),data?.getValue("field").toString(),data?.getValue("difficulty").toString(),data?.getValue("type").toString(),data?.getValue("owner").toString()))
+                {
+                    database.child("project_swipes").child(data?.getValue("id").toString()).get().addOnSuccessListener {
+                        if(!it.value.toString().contains(userId))
+                            list.add(Project(data?.getValue("id").toString().toInt(),data?.getValue("heading").toString(),data?.getValue("description").toString(),
+                                data?.getValue("language").toString(),data?.getValue("field").toString(),data?.getValue("difficulty").toString(),data?.getValue("type").toString(),data?.getValue("owner").toString()))
+
+                        arrayAdapter?.notifyDataSetChanged()
+                    }
+                }
             }
-            arrayAdapter?.notifyDataSetChanged()
         }
         val swipeFlingAdapterView=view.findViewById<SwipeFlingAdapterView>(R.id.cvAdapter)
         ivSwipeRight=view.findViewById(R.id.ivSwipeRight)
@@ -68,11 +74,12 @@ class SwipeFragment : Fragment() {
             }
 
             override fun onLeftCardExit(o: Any) {
-
-                Log.d("jans","Left called")
+                val item=o as Project
+                database.child("project_swipes").child(item.id.toString()).child("left").setValue(userId)
             }
             override fun onRightCardExit(o: Any) {
-                Log.d("jans","Right called")
+                val item=o as Project
+                database.child("project_swipes").child(item.id.toString()).child("right").setValue(userId)
             }
             override fun onAdapterAboutToEmpty(i: Int) {}
             override fun onScroll(v: Float) {}
