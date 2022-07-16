@@ -7,8 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import com.jns.codelink.R
 import com.jns.codelink.adapters.CardAdapter
+import com.jns.codelink.models.Chat
 import com.jns.codelink.models.Project
 import com.lorentzos.flingswipe.SwipeFlingAdapterView
 import com.lorentzos.flingswipe.SwipeFlingAdapterView.onFlingListener
@@ -18,6 +25,8 @@ class SwipeFragment : Fragment() {
 
     lateinit var ivSwipeRight:ImageView
     lateinit var ivSwipeLeft:ImageView
+    private lateinit var database: DatabaseReference
+    private lateinit var auth: FirebaseAuth;
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,19 +35,30 @@ class SwipeFragment : Fragment() {
         // Inflate the layout for this fragment
         val view= inflater.inflate(R.layout.fragment_swipe, container, false)
 
+
+        database = FirebaseDatabase.getInstance().reference
+        auth = Firebase.auth
+        val userId= auth.currentUser!!.uid
+        val db = Firebase.firestore
+
         //temporary list used to display output, will be replaced later
         val list=ArrayList<Project>()
-        list.add(Project(1,"Website","Simple web application","Python","Web Development","advanced","professional"))
-        list.add(Project(2,"Application","Simple Android application","Kotlin","Android Development","advanced","professional"))
-        list.add(Project(3,"Android Development","Simple web application","Python","Web Development","advanced","professional"))
 
+        val arrayAdapter= this.activity?.let { CardAdapter(it,R.layout.swipecard_design,list) }
+
+        db.collection("projects").get().addOnSuccessListener {
+            it.documents.forEach {
+                val data=it.data
+                if(!data?.get("owner").toString().equals(userId))
+                list.add(Project(data?.getValue("id").toString().toInt(),data?.getValue("heading").toString(),data?.getValue("description").toString(),
+                    data?.getValue("language").toString(),data?.getValue("field").toString(),data?.getValue("difficulty").toString(),data?.getValue("type").toString(),data?.getValue("owner").toString()))
+            }
+            arrayAdapter?.notifyDataSetChanged()
+        }
         val swipeFlingAdapterView=view.findViewById<SwipeFlingAdapterView>(R.id.cvAdapter)
         ivSwipeRight=view.findViewById(R.id.ivSwipeRight)
         ivSwipeLeft=view.findViewById(R.id.ivSwipeLeft)
 
-
-        var arrayAdapter=
-            this.activity?.let { CardAdapter(it,R.layout.swipecard_design,list) }
 
         swipeFlingAdapterView.adapter=arrayAdapter
         swipeFlingAdapterView.setFlingListener(object : onFlingListener {
