@@ -26,7 +26,7 @@ class AddMemberActivity:AppCompatActivity(){
     lateinit var layoutManager: RecyclerView.LayoutManager
     lateinit var layoutManager2: RecyclerView.LayoutManager
 
-    //var projectAdapter:RecyclerView.Adapter<AddMemberAdapter.ViewHolder>?=null
+    var projectAdapter:RecyclerView.Adapter<AddMemberAdapter.ViewHolder>?=null
     var projectAdapter2:RecyclerView.Adapter<AddedMemberAdapter.ViewHolder>?=null
 
     override fun onCreate(savedInstanceState: Bundle?){
@@ -43,10 +43,11 @@ class AddMemberActivity:AppCompatActivity(){
         potmembersList.add(Chat("Megha","Hello!","4:13","5"))
         potmembersList.add(Chat("Joanne","Hello!","4:13","5"))
 
-        addedmembersList.add(Chat("Maris","Hello!","4:13","5"))
-        addedmembersList.add(Chat("Megha","Hello!","4:13","5"))
+        addedmembersList.add(Chat("Jans","Hello!","4:13","5"))
+        addedmembersList.add(Chat("Karthik","Hello!","4:13","5"))
 
         var projectAdapter = AddMemberAdapter(potmembersList)
+        var projectAdapter2 = AddedMemberAdapter(addedmembersList)
         rvPotMember.adapter = projectAdapter
         rvPotMember.layoutManager = layoutManager
         projectAdapter.setOnItemClickListener(object: AddMemberAdapter.onItemClickListener{
@@ -54,7 +55,28 @@ class AddMemberActivity:AppCompatActivity(){
                 Toast.makeText(this@AddMemberActivity,"you clicked on item $position",Toast.LENGTH_SHORT).show()
             }
 
+            override fun onPlusClick(position: Int) {
+                addedmembersList.add(potmembersList[position])
+                projectAdapter2.notifyItemInserted(addedmembersList.size)
+                potmembersList.removeAt(position)
+                projectAdapter.notifyItemRemoved(position)
+            }
+
         })
+
+        /*projectAdapter2.setOnItemClickListener(object: AddedMemberAdapter.onItemClickListener2{
+            override fun onItemClick2(position: Int) {
+                Toast.makeText(this@AddedMemberActivity,"you clicked on item $position",Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onMinusClick2(position: Int) {
+                potmembersList.add(addedmembersList[position])
+                projectAdapter.notifyItemInserted(potmembersList.size)
+                addedmembersList.removeAt(position)
+                projectAdapter2.notifyItemRemoved(position)
+            }
+
+        })*/
 
 
         //can we do this?

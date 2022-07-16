@@ -21,6 +21,7 @@ class AddMemberAdapter(private val orderList: ArrayList<Chat>) :
 
     interface onItemClickListener{
         fun onItemClick(position: Int)
+        fun onPlusClick(position:Int)
     }
 
     fun setOnItemClickListener(listener: onItemClickListener){
@@ -54,9 +55,8 @@ class AddMemberAdapter(private val orderList: ArrayList<Chat>) :
                 listener.onItemClick(adapterPosition)
             }
             ivPlus.setOnClickListener{
-                Toast.makeText(view.context, "Plus Button Clicked", Toast.LENGTH_SHORT).show()
+                listener.onPlusClick(adapterPosition)
         }
-
 
         }
     }
