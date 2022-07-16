@@ -66,7 +66,7 @@ class AddMemberActivity:AppCompatActivity(){
 
         /*projectAdapter2.setOnItemClickListener(object: AddedMemberAdapter.onItemClickListener2{
             override fun onItemClick2(position: Int) {
-                Toast.makeText(this@AddedMemberActivity,"you clicked on item $position",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@AddMemberActivity,"you clicked on item $position",Toast.LENGTH_SHORT).show()
             }
 
             override fun onMinusClick2(position: Int) {
