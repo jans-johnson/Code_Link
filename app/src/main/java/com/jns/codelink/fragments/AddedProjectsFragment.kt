@@ -34,7 +34,7 @@ class AddedProjectsFragment : Fragment() {
             startActivity(intent)
         }
 
-        val adapter = activity?.supportFragmentManager?.let { AddedProjectsAdapter(it, tlProjects.tabCount) }
+        val adapter = childFragmentManager.let { AddedProjectsAdapter(it, tlProjects.tabCount) }
         vpAddedProjects.adapter = adapter
 
         vpAddedProjects.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tlProjects))

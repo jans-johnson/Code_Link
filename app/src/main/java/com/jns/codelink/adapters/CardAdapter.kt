@@ -22,7 +22,7 @@ class CardAdapter (context1: Context?,val resourceId: Int,val items:ArrayList<Pr
         val tvCardDescription:TextView=convertView.findViewById(R.id.tvCardDescription)
 
         tvCardHeading.text=items[position].heading
-        tvCardType.text=items[position].type
+        tvCardType.text=items[position].field
         tvCardLanguage.text=items[position].language
         tvCardDescription.text=items[position].description
         return convertView

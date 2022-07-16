@@ -4,10 +4,8 @@ import android.R.attr.password
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.view.View
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.jns.codelink.R
@@ -17,6 +15,7 @@ class LoginActivity : AppCompatActivity() {
 
     lateinit var mAuth:FirebaseAuth
 
+    lateinit var loginProgressLayout:RelativeLayout
     lateinit var tvRegister:TextView
     lateinit var etEmail:EditText
     private lateinit var etPassword:EditText
@@ -29,6 +28,8 @@ class LoginActivity : AppCompatActivity() {
         etPassword=findViewById(R.id.etPassword)
         btnLogin=findViewById(R.id.btnLogin)
         tvRegister=findViewById(R.id.tvRegister)
+        loginProgressLayout=findViewById(R.id.loginProgressLayout)
+
         mAuth = FirebaseAuth.getInstance();
 
         tvRegister.setOnClickListener {
@@ -36,6 +37,8 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
         btnLogin.setOnClickListener {
+
+            loginProgressLayout.visibility= View.VISIBLE
             val email=etEmail.text.toString()
             val pass=etPassword.text.toString()
             mAuth.signInWithEmailAndPassword(email, pass)
@@ -44,12 +47,12 @@ class LoginActivity : AppCompatActivity() {
                 ) { task ->
                     if (task.isSuccessful) {
                         val user = mAuth.currentUser
-                        Log.d("jans",user?.email.toString())
+                        loginProgressLayout.visibility= View.GONE
                         intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
                         finish()
                     } else {
-                        Log.w("message", "signInWithEmail:failure", task.exception)
+                        Log.w("jans", "signInWithEmail:failure", task.exception)
                         Toast.makeText(
                             this, "Authentication failed.",
                             Toast.LENGTH_SHORT

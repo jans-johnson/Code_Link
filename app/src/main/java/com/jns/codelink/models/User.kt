@@ -6,4 +6,5 @@ data class User (val name:String="",
                 val description:String="",
                  val location:String="",
                  val links:String="",
-                 val skills:String="")
+                 val skills:String="",
+                val uid:String="")

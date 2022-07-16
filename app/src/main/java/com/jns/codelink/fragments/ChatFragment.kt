@@ -2,6 +2,7 @@ package com.jns.codelink.fragments
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -26,8 +27,9 @@ class ChatFragment : Fragment() {
         val tlChats=view.findViewById<TabLayout>(R.id.tlChats)
         val vpChats=view.findViewById<ViewPager>(R.id.vpChats)
 
-        val adapter = activity?.supportFragmentManager?.let { ChatAdapter(it, tlChats.tabCount) }
+        val adapter = childFragmentManager.let { ChatAdapter(it, tlChats.tabCount) }
         vpChats.adapter = adapter
+
 
         vpChats.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tlChats))
 
@@ -49,5 +51,4 @@ class ChatFragment : Fragment() {
 
         return view
     }
-
 }
