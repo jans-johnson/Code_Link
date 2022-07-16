@@ -74,6 +74,8 @@ class RegisterActivity : AppCompatActivity() {
                         if (task.isSuccessful) {
                             // Sign in success, update UI with the signed-in user's information
                             val user = auth.currentUser
+                            val userId= auth.currentUser!!.uid
+
                             details2=frag!!.getDetails()
                             val newUser=User(details2["name"].toString(),
                             details["username"].toString(),
@@ -81,9 +83,9 @@ class RegisterActivity : AppCompatActivity() {
                             details2["description"].toString(),
                             details2["location"].toString(),
                             details2["links"].toString(),
-                            details2["skills"].toString())
+                            details2["skills"].toString(),
+                            userId)
 
-                            val userId= auth.currentUser!!.uid
                             database.child("users").child(userId).setValue(newUser)
                             registerProgressLayout.visibility=View.GONE
                         } else {

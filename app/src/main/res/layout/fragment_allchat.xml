@@ -9,5 +9,6 @@ android:orientation="vertical">
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvAllChatList"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        tools:listitem="@layout/chat_single_row"/>
 </LinearLayout>

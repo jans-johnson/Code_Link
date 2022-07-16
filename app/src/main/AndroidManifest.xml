@@ -34,6 +34,8 @@
         </activity>
 
         <activity android:name=".activities.LoginActivity" />
+
+        <activity android:name=".activities.ChatActivity"/>
     </application>
 
 </manifest>
