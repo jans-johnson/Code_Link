@@ -16,9 +16,12 @@ import com.google.firebase.ktx.Firebase
 import com.jns.codelink.R
 import com.jns.codelink.adapters.CardAdapter
 import com.jns.codelink.models.Chat
+import com.jns.codelink.models.Notification
 import com.jns.codelink.models.Project
 import com.lorentzos.flingswipe.SwipeFlingAdapterView
 import com.lorentzos.flingswipe.SwipeFlingAdapterView.onFlingListener
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 
 class SwipeFragment : Fragment() {
@@ -52,10 +55,21 @@ class SwipeFragment : Fragment() {
                 if(!data?.get("owner").toString().equals(userId))
                 {
                     database.child("project_swipes").child(data?.getValue("id").toString()).get().addOnSuccessListener {
-                        if(!it.value.toString().contains(userId))
-                            list.add(Project(data?.getValue("id").toString().toInt(),data?.getValue("heading").toString(),data?.getValue("description").toString(),
-                                data?.getValue("language").toString(),data?.getValue("field").toString(),data?.getValue("difficulty").toString(),data?.getValue("type").toString(),data?.getValue("owner").toString()))
+                        if(!it.value.toString().contains(userId)) {
+                            list.add(
+                                Project(
+                                    data?.getValue("id").toString().toInt(),
+                                    data?.getValue("heading").toString(),
+                                    data?.getValue("description").toString(),
+                                    data?.getValue("language").toString(),
+                                    data?.getValue("field").toString(),
+                                    data?.getValue("difficulty").toString(),
+                                    data?.getValue("type").toString(),
+                                    data?.getValue("owner").toString()
+                                )
+                            )
 
+                        }
                         arrayAdapter?.notifyDataSetChanged()
                     }
                 }
@@ -79,7 +93,22 @@ class SwipeFragment : Fragment() {
             }
             override fun onRightCardExit(o: Any) {
                 val item=o as Project
+                val current = LocalDateTime.now()
+                val formatter = DateTimeFormatter.ofPattern("HH:mm")
+                val formatted = current.format(formatter)
                 database.child("project_swipes").child(item.id.toString()).child("right").setValue(userId)
+
+                database.child("users").child(auth.currentUser!!.uid.toString()).get().addOnSuccessListener {
+                    database.child("notifications").child(item.owner).push().setValue(
+                        Notification(
+                            it.child("username").value.toString(),
+                            "Swiped Right",
+                            formatted,
+                            o.heading
+                        )
+                    )
+                }
+
             }
             override fun onAdapterAboutToEmpty(i: Int) {}
             override fun onScroll(v: Float) {}
