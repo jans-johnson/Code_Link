@@ -32,7 +32,7 @@ class GroupChatAdapter(val context: Context, private val orderList: ArrayList<Ch
 
     override fun onBindViewHolder(holder: ViewHolderProject, position: Int) {
 
-        holder.tvChatPerson.text = orderList[position].person //should this be the variable created or the text id
+        holder.tvChatPerson.text = orderList[position].name//should this be the variable created or the text id
         holder.tvChatDescription.text = orderList[position].description
         holder.tvChatNotif.text = orderList[position].notif_num
         holder.tvChatTime.text = orderList[position].time

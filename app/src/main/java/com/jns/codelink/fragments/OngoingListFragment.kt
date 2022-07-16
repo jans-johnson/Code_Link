@@ -2,6 +2,7 @@ package com.jns.codelink.fragments
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -29,6 +30,7 @@ class OngoingListFragment : Fragment() {
         layoutManager = LinearLayoutManager(activity)
 
         rvOngoingList=view.findViewById(R.id.rvOngoingList)
+
 
         ongoingProjectsList.clear()
         ongoingProjectsList.add(Project(1,"Website","Simple web application","Python","Web Development","advanced","professional"))
