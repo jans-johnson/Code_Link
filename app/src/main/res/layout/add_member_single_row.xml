@@ -41,9 +41,10 @@
         <ImageView
             android:id="@+id/ivPlus"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_gravity="center_vertical"
-            android:layout_marginEnd="5dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
             android:src="@drawable/ic_plus" />
 
 

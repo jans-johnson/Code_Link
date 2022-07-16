@@ -31,7 +31,7 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/tvHeading"
+        android:id="@+id/tvAddMemberHeading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_medium"

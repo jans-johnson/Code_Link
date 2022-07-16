@@ -13,8 +13,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.jns.codelink.R
 import com.jns.codelink.models.Chat
 import com.jns.codelink.models.Project
+import com.jns.codelink.models.User
 
-class AddMemberAdapter(private val orderList: ArrayList<Chat>) :
+class AddMemberAdapter(private val orderList: ArrayList<User>) :
     RecyclerView.Adapter<AddMemberAdapter.ViewHolder>() {
 
     lateinit var mListener: onItemClickListener
@@ -42,7 +43,7 @@ class AddMemberAdapter(private val orderList: ArrayList<Chat>) :
         holder: AddMemberAdapter.ViewHolder,
         position: Int
     ) {
-        holder.tvMemberName.text = orderList[position].person
+        holder.tvMemberName.text = orderList[position].name
 
         //Code for on click Listener to be defined here
     }

@@ -56,7 +56,6 @@ class AddedListFragment : Fragment() {
                     it.data?.get("description").toString()))
 
 
-
             }
             val projectAdapter = AddedProjectsListAdapter(activity as Context, addedProjectsList)
             rvAddedList.adapter = projectAdapter
