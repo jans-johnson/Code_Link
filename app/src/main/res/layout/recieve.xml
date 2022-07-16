@@ -9,6 +9,7 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
+        android:background="@drawable/recieved_message_design"
         android:layout_height="wrap_content">
 
         <TextView
@@ -16,6 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="18dp"
+            android:textColor="@color/black"
             android:text="This is recieve message"
             android:textSize="18sp">
 

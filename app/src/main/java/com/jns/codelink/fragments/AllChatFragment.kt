@@ -61,6 +61,7 @@ class AllChatFragment : Fragment() {
                         val uid=postSnapshot.key.toString().replace(mAuth.currentUser!!.uid,"")
                         mDbRef.child("users").child(uid).get().addOnCompleteListener {
                             val added=it.result.getValue(Chat::class.java) as Chat
+                            if(!allChatsList.contains(added))
                             allChatsList.add(added)
                             projectAdapter.notifyDataSetChanged()
                         }
