@@ -1,6 +1,9 @@
 package com.jns.codelink.activities
 
 import android.os.Bundle
+import android.view.View
+import android.widget.ImageView
+import android.widget.RelativeLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -13,6 +16,7 @@ import com.google.firebase.ktx.Firebase
 import com.jns.codelink.R
 import com.jns.codelink.adapters.AddMemberAdapter
 import com.jns.codelink.adapters.AddedMemberAdapter
+import com.jns.codelink.fragments.ProfileFragment
 import com.jns.codelink.models.User
 
 class AddMemberActivity:AppCompatActivity(){
@@ -20,6 +24,11 @@ class AddMemberActivity:AppCompatActivity(){
     lateinit var tvAddMemberHeading: TextView
     lateinit var rvPotMember: RecyclerView
     lateinit var rvAddedMember: RecyclerView
+    lateinit var ivAddMemberBack:ImageView
+    lateinit var ivAddProfileBack:ImageView
+
+    lateinit var rlAddMemberProfile:RelativeLayout
+
     var potmembersList = arrayListOf<User>()
     var addedmembersList = arrayListOf<User>()
     lateinit var layoutManager: RecyclerView.LayoutManager
@@ -28,8 +37,6 @@ class AddMemberActivity:AppCompatActivity(){
     private lateinit var database: DatabaseReference
     private lateinit var auth: FirebaseAuth;
 
-    var projectAdapter:RecyclerView.Adapter<AddMemberAdapter.ViewHolder>?=null
-    var projectAdapter2:RecyclerView.Adapter<AddedMemberAdapter.ViewHolder>?=null
 
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
@@ -44,6 +51,17 @@ class AddMemberActivity:AppCompatActivity(){
         rvPotMember=findViewById(R.id.rvPotMembers)
         rvAddedMember=findViewById(R.id.rvAddedMembers)
         tvAddMemberHeading=findViewById(R.id.tvAddMemberHeading)
+        ivAddMemberBack=findViewById(R.id.ivAddMemberBack)
+        ivAddProfileBack=findViewById(R.id.ivAddProfileBack)
+
+        rlAddMemberProfile=findViewById(R.id.rvAddMemberProfile)
+
+        ivAddMemberBack.setOnClickListener {
+            finish()
+        }
+        ivAddProfileBack.setOnClickListener {
+            rlAddMemberProfile.visibility= View.GONE
+        }
 
         tvAddMemberHeading.text=heading
 
@@ -52,7 +70,7 @@ class AddMemberActivity:AppCompatActivity(){
         val userId= auth.currentUser!!.uid
 
         val projectAdapter = AddMemberAdapter(potmembersList)
-        var projectAdapter2 = AddedMemberAdapter(addedmembersList)
+        val projectAdapter2 = AddedMemberAdapter(addedmembersList)
 
         database.child("project_swipes").child(id!!).child("right").addValueEventListener(object: ValueEventListener
         {
@@ -77,7 +95,13 @@ class AddMemberActivity:AppCompatActivity(){
         rvPotMember.layoutManager = layoutManager
         projectAdapter.setOnItemClickListener(object: AddMemberAdapter.onItemClickListener{
             override fun onItemClick(position: Int) {
-                Toast.makeText(this@AddMemberActivity,"you clicked on item $position",Toast.LENGTH_SHORT).show()
+                rlAddMemberProfile.visibility=View.VISIBLE
+                supportFragmentManager.beginTransaction()
+                    .replace(
+                        R.id.flAddMemberProfile,
+                        ProfileFragment(1,potmembersList[position])
+                    )
+                    .commit()
             }
 
             override fun onPlusClick(position: Int) {
