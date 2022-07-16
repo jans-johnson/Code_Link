@@ -38,6 +38,17 @@
             android:layout_gravity="center"
             android:paddingTop="10dp">
 
+            <ImageView
+                android:id="@+id/ivLogout"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:clickable="true"
+                android:src="@drawable/ic_logout" />
+
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/ivPic"
                 android:layout_width="100dp"
@@ -48,6 +59,17 @@
                 android:src="@drawable/profilepic"
                 app:shapeAppearanceOverlay="@style/Circular" />
 
+
+            <Button
+                android:id="@+id/btnProfileMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvProfileName"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/rounded_button"
+                android:text="Message" />
 
             <TextView
                 android:id="@+id/tvProfileName"
