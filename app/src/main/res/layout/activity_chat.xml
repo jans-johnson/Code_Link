@@ -13,12 +13,12 @@
             android:background="#00A5B2">
 
             <ImageView
-                android:id="@+id/exit_icon"
+                android:id="@+id/ivChatBack"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_back"
                 android:layout_centerVertical="true"
-                />
+                android:clickable="true"
+                android:src="@drawable/ic_back" />
 
             <TextView
                 android:id="@+id/chat_header"
@@ -27,7 +27,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="16dp"
-                android:layout_toEndOf="@+id/exit_icon"
+                android:layout_toEndOf="@+id/ivChatBack"
                 android:textColor="@android:color/white"
                 android:textSize="20sp" />
         </RelativeLayout>

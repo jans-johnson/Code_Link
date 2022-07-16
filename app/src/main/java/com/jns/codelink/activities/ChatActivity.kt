@@ -1,10 +1,6 @@
 package com.jns.codelink.activities
 
-import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.util.Log
-import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
@@ -14,9 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.jns.codelink.R
-import com.jns.codelink.adapters.AllChatAdapter
 import com.jns.codelink.adapters.ChatMessageAdapter
-import com.jns.codelink.models.Chat
 import com.jns.codelink.models.Message
 
 class ChatActivity : AppCompatActivity() {
@@ -27,6 +21,7 @@ class ChatActivity : AppCompatActivity() {
     private lateinit var chatMessageAdapter: ChatMessageAdapter
     private lateinit var messageList: ArrayList<Message>
     private lateinit var mDbRef: DatabaseReference
+    private lateinit var exit_icon:ImageView
 
     var receiverRoom: String? = null
     var senderRoom: String? = null
@@ -49,10 +44,17 @@ class ChatActivity : AppCompatActivity() {
         chatRecyclerView = findViewById(R.id.chatRecyclerView)
         messageBox=findViewById(R.id.messageBox)
         sendButton=findViewById(R.id.sentButton)
+        exit_icon=findViewById(R.id.ivChatBack)
         messageList= ArrayList()
         chatMessageAdapter = ChatMessageAdapter(this, messageList)
 
-        chatRecyclerView.layoutManager = LinearLayoutManager(this)
+        exit_icon.setOnClickListener {
+            finish()
+        }
+
+        val layoutManager=LinearLayoutManager(this)
+        layoutManager.stackFromEnd=true
+        chatRecyclerView.layoutManager = layoutManager
         chatRecyclerView.adapter = chatMessageAdapter
 
         // logic for adding data to recyclerView
