@@ -1,6 +1,7 @@
 package com.jns.codelink.adapters
 
 import android.content.Context
+import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,7 +33,12 @@ class NotificationAdapter(val context: Context, private val orderList: ArrayList
 
     override fun onBindViewHolder(holder: ViewHolderProject, position: Int) {
 
-        holder.tvNotifDescription.text = orderList[position].person //append description and project name
+        var value=""
+        if(orderList[position].description.equals("Swiped Right"))
+        {
+            value="<b>"+orderList[position].person+"</b> swiped right on <b>"+orderList[position].proj_name+"</b>"
+        }
+        holder.tvNotifDescription.text = Html.fromHtml(value)
         holder.tvTime.text = orderList[position].time
         //Code for on click Listener to be defined here
     }
