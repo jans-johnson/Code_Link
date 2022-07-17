@@ -32,7 +32,7 @@
                 android:layout_height="80dp"
                 android:layout_gravity="center"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ic_cpp" />
+                android:src="@drawable/ic_javasc" />
 
         </androidx.cardview.widget.CardView>
 
