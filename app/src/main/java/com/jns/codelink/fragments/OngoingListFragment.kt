@@ -2,24 +2,25 @@ package com.jns.codelink.fragments
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.*
 import com.jns.codelink.R
-import com.jns.codelink.adapters.AddedProjectsAdapter
-import com.jns.codelink.adapters.AddedProjectsListAdapter
-import com.jns.codelink.adapters.OngoingProjectsListAdapter
+import com.jns.codelink.adapters.GroupChatAdapter
+import com.jns.codelink.models.Chat
 import com.jns.codelink.models.Project
 
 class OngoingListFragment : Fragment() {
 
     lateinit var rvOngoingList:RecyclerView
-    var ongoingProjectsList = arrayListOf<Project>()
+    var ongoingProjectsList = arrayListOf<Chat>()
     lateinit var layoutManager: RecyclerView.LayoutManager
+    private lateinit var mDbRef: DatabaseReference
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,13 +34,40 @@ class OngoingListFragment : Fragment() {
 
 
         ongoingProjectsList.clear()
-        ongoingProjectsList.add(Project(1,"Website","Simple web application","Python","Web Development","advanced","professional"))
-        ongoingProjectsList.add(Project(2,"Application","Simple Android application","Kotlin","Android Development","advanced","professional"))
-        ongoingProjectsList.add(Project(3,"Android Development","Simple web application","Python","Web Development","advanced","professional"))
-
-        val projectAdapter = OngoingProjectsListAdapter(activity as Context, ongoingProjectsList)
+        val projectAdapter = GroupChatAdapter(activity as Context, ongoingProjectsList)
         rvOngoingList.adapter = projectAdapter
         rvOngoingList.layoutManager = layoutManager
+        val mAuth = FirebaseAuth.getInstance()
+        mDbRef = FirebaseDatabase.getInstance().getReference()
+
+
+        mDbRef.child("GroupChat").addValueEventListener(object: ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+
+
+                for(postSnapshot in snapshot.children){
+                    if(postSnapshot.toString().contains(mAuth.uid.toString()))
+                    {
+                        var groupId=""
+                        var groupName=""
+                        postSnapshot.children.forEach {
+                            if(it.key.toString().equals("groupId"))
+                                groupId=it.value.toString()
+                            else if(it.key.toString().equals("groupName"))
+                                groupName=it.value.toString()
+                        }
+                        val chat= Chat(groupName, uid = groupId)
+                        ongoingProjectsList.add(chat)
+                        projectAdapter.notifyDataSetChanged()
+                    }
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+
+            }
+
+        })
         return view
     }
 
