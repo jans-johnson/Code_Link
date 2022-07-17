@@ -24,10 +24,10 @@
             android:exported="false" />
         <activity
             android:name=".activities.MainActivity"
-            android:label="Main"
-            android:exported="true"/>
-
-        <activity android:name=".activities.SplashActivity"
+            android:exported="true"
+            android:label="Main" />
+        <activity
+            android:name=".activities.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,10 +35,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".activities.LoginActivity" />
-
-        <activity android:name=".activities.ChatActivity"/>
+        <activity android:name=".activities.ChatActivity" />
     </application>
 
 </manifest>

@@ -1,11 +1,9 @@
 package com.jns.codelink.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.ImageView
-import android.widget.RelativeLayout
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -17,6 +15,7 @@ import com.jns.codelink.R
 import com.jns.codelink.adapters.AddMemberAdapter
 import com.jns.codelink.adapters.AddedMemberAdapter
 import com.jns.codelink.fragments.ProfileFragment
+import com.jns.codelink.models.GroupChat
 import com.jns.codelink.models.User
 
 class AddMemberActivity:AppCompatActivity(){
@@ -26,6 +25,7 @@ class AddMemberActivity:AppCompatActivity(){
     lateinit var rvAddedMember: RecyclerView
     lateinit var ivAddMemberBack:ImageView
     lateinit var ivAddProfileBack:ImageView
+    lateinit var btnStartProject:Button
 
     lateinit var rlAddMemberProfile:RelativeLayout
 
@@ -53,6 +53,7 @@ class AddMemberActivity:AppCompatActivity(){
         tvAddMemberHeading=findViewById(R.id.tvAddMemberHeading)
         ivAddMemberBack=findViewById(R.id.ivAddMemberBack)
         ivAddProfileBack=findViewById(R.id.ivAddProfileBack)
+        btnStartProject=findViewById(R.id.btnStartProject)
 
         rlAddMemberProfile=findViewById(R.id.rvAddMemberProfile)
 
@@ -131,7 +132,23 @@ class AddMemberActivity:AppCompatActivity(){
 
         })
 
+        btnStartProject.setOnClickListener {
+            if(!addedmembersList.isEmpty())
+            {
+                val userMap=HashMap<String,String>()
+                for(i in addedmembersList){
+                    userMap[i.uid]=i.username
+                }
+                userMap[userId]="Admin"
+                val group=GroupChat(id,heading!!,userId,userMap)
+                database.child("GroupChat").child(id).setValue(group)
 
+                intent = Intent(this, ChatActivity::class.java)
+                intent.putExtra("isGroup",1)
+                intent.putExtra("id",id.toString())
+                startActivity(intent)
+            }
+        }
 
 
     }

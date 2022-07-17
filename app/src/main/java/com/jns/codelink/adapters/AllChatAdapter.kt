@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.jns.codelink.R
 import com.jns.codelink.activities.ChatActivity
 import com.jns.codelink.models.Chat
-import com.jns.codelink.models.Project
 
 class AllChatAdapter(val context: Context, val orderList: ArrayList<Chat>):
     RecyclerView.Adapter<AllChatAdapter.ViewHolderProject>() {
