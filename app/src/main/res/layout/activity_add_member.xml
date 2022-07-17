@@ -30,6 +30,7 @@
                 android:id="@+id/ivIcon"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
+                android:layout_gravity="center"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_cpp" />
 
@@ -41,6 +42,8 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_medium"
             android:gravity="center"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
             android:text="Shopping Website"
             android:textColor="#000000"
             android:textSize="30sp" />
@@ -59,6 +62,8 @@
             android:layout_marginTop="20dp"
             android:fontFamily="@font/poppins_medium"
             android:gravity="center"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
             android:text="Added Members"
             android:textColor="#000000"
             android:textSize="28sp" />
