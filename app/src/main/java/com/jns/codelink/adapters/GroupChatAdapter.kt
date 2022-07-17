@@ -1,12 +1,14 @@
 package com.jns.codelink.adapters
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.jns.codelink.R
+import com.jns.codelink.activities.ChatActivity
 import com.jns.codelink.models.Chat
 
 class GroupChatAdapter(val context: Context, private val orderList: ArrayList<Chat>) :
@@ -32,11 +34,18 @@ class GroupChatAdapter(val context: Context, private val orderList: ArrayList<Ch
 
     override fun onBindViewHolder(holder: ViewHolderProject, position: Int) {
 
-        holder.tvChatPerson.text = orderList[position].name//should this be the variable created or the text id
+        holder.tvChatPerson.text =
+            orderList[position].name//should this be the variable created or the text id
         holder.tvChatDescription.text = orderList[position].description
         holder.tvChatNotif.text = orderList[position].notif_num
         holder.tvChatTime.text = orderList[position].time
 
         //Code for on click Listener to be defined here
+        holder.itemView.setOnClickListener {
+            val intent = Intent(context, ChatActivity::class.java)
+            intent.putExtra("isGroup", 1)
+            intent.putExtra("id", orderList[position].uid)
+            context.startActivity(intent)
+        }
     }
 }
