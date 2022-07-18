@@ -10,7 +10,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.jns.codelink.R
 import com.jns.codelink.models.Message
 
-class GroupMessageAdapter(val context: Context, val messageList: ArrayList<Message> ):
+class GroupMessageAdapter(val context: Context, val messageList: ArrayList<Message>,val users : HashMap<String,String>):
     RecyclerView.Adapter<RecyclerView.ViewHolder>(){
     val ITEM_RECEIVE=1;
     val ITEM_SENT=2;
@@ -42,7 +42,7 @@ class GroupMessageAdapter(val context: Context, val messageList: ArrayList<Messa
             //do stuff for receive view holder
             val viewHolder = holder as ReceiveViewHolder
             holder.receiveMessage.text = currentMessage.message
-
+            holder.tvChatSender.text=users[currentMessage.senderId]
         }
 
     }
@@ -69,6 +69,7 @@ class GroupMessageAdapter(val context: Context, val messageList: ArrayList<Messa
     class ReceiveViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
         val receiveMessage = itemView.findViewById<TextView>(R.id.txt_receive_message)
+        val tvChatSender=itemView.findViewById<TextView>(R.id.tvChatSender)
 
     }
 

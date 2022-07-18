@@ -4,16 +4,24 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/gradient_background.xml" value="0.1615" />
+        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_add.xml" value="0.199" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_added_poject.xml" value="0.158" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_back.xml" value="0.2265" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_c.xml" value="0.1" />
+        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_chat.xml" value="0.199" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_cpp.xml" value="0.134" />
+        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_cross.xml" value="0.199" />
+        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_css.xml" value="0.199" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_description.xml" value="0.261" />
+        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_edit.xml" value="0.199" />
+        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_html.xml" value="0.199" />
+        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_javasc.xml" value="0.199" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_kotlin.xml" value="0.261" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_language.xml" value="0.261" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_launcher_background.xml" value="0.134" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_notification.xml" value="0.224" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_proj_name.xml" value="0.24" />
+        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_splash_page.xml" value="0.199" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_tick.xml" value="0.224" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_type_of_application.xml" value="0.24" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/drawable/ic_user.xml" value="0.24" />
@@ -29,6 +37,7 @@
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/activity_login.xml" value="0.27447916666666666" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/activity_main.xml" value="0.21829710144927536" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/activity_register.xml" value="0.22418478260869565" />
+        <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/activity_splashpg.xml" value="0.23550724637681159" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/add_member_single_row.xml" value="0.264" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/added_projects_single_row.xml" value="0.2558876811594203" />
         <entry key="..\:/Android/MiniProject/Code_Link/app/src/main/res/layout/chat_single_row.xml" value="0.21784420289855072" />
