@@ -54,7 +54,6 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="20dp"
                 android:elevation="13dp"
                 android:src="@drawable/profilepic"
                 app:shapeAppearanceOverlay="@style/Circular" />
@@ -95,16 +94,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:cardCornerRadius="15dp"
-                    app:cardElevation="10dp"
+                    app:cardElevation="2dp"
                     app:cardUseCompatPadding="true"
                     app:contentPadding="5dp"
                     tools:cardCornerRAdius="5dp"
                     tools:context=".fragments.ProfileFragment">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:layout_alignParentStart="true"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
 
 
                         <TextView
@@ -114,18 +116,42 @@
                             android:layout_margin="5dp"
                             android:fontFamily="@font/poppins_regular"
                             android:gravity="center"
+                            android:drawablePadding="10dp"
                             android:textColor="@color/black"
                             android:textSize="14sp"
-                            android:textStyle="bold|normal"
                             app:drawableStartCompat="@drawable/ic_desc" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="2dp"
+                    app:cardUseCompatPadding="true"
+                    app:contentPadding="5dp"
+                    tools:cardCornerRAdius="5dp"
+                    tools:context=".fragments.ProfileFragment">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
 
                         <TextView
                             android:id="@+id/tvProfileEmail"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
                             android:fontFamily="@font/poppins_regular"
+                            android:layout_margin="5dp"
                             android:gravity="center"
+                            android:drawablePadding="10dp"
+                            app:drawableStartCompat="@drawable/ic_mail"
                             android:textColor="#374143"
                             android:textSize="14sp" />
 
@@ -137,8 +163,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:cardCornerRadius="15dp"
-                    app:cardElevation="10dp"
+                    app:cardElevation="2dp"
                     app:cardUseCompatPadding="true"
+                    app:contentPadding="5dp"
                     tools:cardCornerRAdius="5dp"
                     tools:context=".fragments.ProfileFragment">
 
@@ -172,7 +199,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:cardCornerRadius="15dp"
-                    app:cardElevation="10dp"
+                    app:cardElevation="2dp"
                     app:cardUseCompatPadding="true"
                     tools:cardCornerRAdius="5dp"
                     tools:context=".fragments.ProfileFragment">
@@ -191,7 +218,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:cardCornerRadius="15dp"
-                    app:cardElevation="10dp"
+                    app:cardElevation="2dp"
                     app:cardUseCompatPadding="true"
                     tools:cardCornerRAdius="5dp"
                     tools:context=".fragments.ProfileFragment">
@@ -205,6 +232,8 @@
                         android:padding="10dp"
                         android:textColor="@color/black"
                         android:textSize="14sp"
+                        android:drawablePadding="10dp"
+                        app:drawableStartCompat="@drawable/ic_type_of_application"
                         android:textStyle="normal" />
 
                 </androidx.cardview.widget.CardView>

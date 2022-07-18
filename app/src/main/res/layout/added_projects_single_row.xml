@@ -37,6 +37,9 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/poppins_medium"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="15dp"
                 android:text="Project Heading"
                 android:textColor="#000000"
                 android:textStyle="bold" />
@@ -47,7 +50,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
+                android:ellipsize="end"
                 android:fontFamily="@font/poppins_medium"
+                android:maxLines="1"
+                android:paddingStart="5dp"
+                android:paddingEnd="15dp"
                 android:text="Project Description" />
         </LinearLayout>
 

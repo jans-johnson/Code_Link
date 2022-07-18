@@ -29,23 +29,25 @@
             android:gravity="center|center_horizontal"
             android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/ivSwipeRight"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="40dp"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:src="@drawable/ic_tick" />
 
             <ImageView
                 android:id="@+id/ivSwipeLeft"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
                 android:layout_weight="1"
                 android:clickable="true"
                 android:src="@drawable/ic_cross" />
+
+            <ImageView
+                android:id="@+id/ivSwipeRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:src="@drawable/ic_tick" />
+
         </LinearLayout>
     </LinearLayout>
 </FrameLayout>
