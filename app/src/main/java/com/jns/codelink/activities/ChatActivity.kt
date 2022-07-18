@@ -137,7 +137,7 @@ class ChatActivity(var isGroup:Int=0) : AppCompatActivity() {
 
                 chatHeader.text=group.groupName
 
-                groupMessageAdapter = GroupMessageAdapter(this, messageList)
+                groupMessageAdapter = GroupMessageAdapter(this, messageList,users)
 
 
                 val layoutManager = LinearLayoutManager(this)
