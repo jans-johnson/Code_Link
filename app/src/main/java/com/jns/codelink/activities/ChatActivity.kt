@@ -139,7 +139,6 @@ class ChatActivity(var isGroup:Int=0) : AppCompatActivity() {
 
                 groupMessageAdapter = GroupMessageAdapter(this, messageList,users)
 
-
                 val layoutManager = LinearLayoutManager(this)
                 layoutManager.stackFromEnd = true
                 chatRecyclerView.layoutManager = layoutManager
