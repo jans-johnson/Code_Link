@@ -104,6 +104,8 @@ class ChatActivity(var isGroup:Int=0) : AppCompatActivity() {
                         mDbRef.child("chats").child(receiverRoom!!).child("messages").push()
                             .setValue(messageObject)
                     }
+
+                chatRecyclerView.scrollToPosition(messageList.size - 1)
                 messageBox.setText("")
             }
 
@@ -174,6 +176,7 @@ class ChatActivity(var isGroup:Int=0) : AppCompatActivity() {
                     mDbRef.child("GroupChat").child(group.groupId).child("messages").push()
                         .setValue(messageObject)
                     messageBox.setText("")
+                    chatRecyclerView.scrollToPosition(messageList.size-1)
                 }
 
             }
