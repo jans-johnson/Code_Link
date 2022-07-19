@@ -34,7 +34,8 @@ class NotificationFragment : Fragment() {
         // Inflate the layout for this fragment
         val view= inflater.inflate(R.layout.fragment_notification, container, false)
         layoutManager = LinearLayoutManager(activity)
-
+        (layoutManager as LinearLayoutManager).reverseLayout=true
+        (layoutManager as LinearLayoutManager).stackFromEnd=true
         rvNotification=view.findViewById(R.id.rvNotification)
 
         database = FirebaseDatabase.getInstance().reference
